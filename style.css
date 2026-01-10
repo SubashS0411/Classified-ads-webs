@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+.font-outfit {
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6366f1;
+  border-radius: 10px;
+}
+
+.bold-pattern {
+  background-color: #f8fafc;
+  background-image: radial-gradient(#6366f1 1.5px, transparent 1.5px), radial-gradient(#6366f1 1.5px, #f8fafc 1.5px);
+  background-size: 60px 60px;
+  background-position: 0 0, 30px 30px;
+}
+
+.dark .bold-pattern {
+  background-color: #0f172a;
+  background-image: radial-gradient(#334155 1.5px, transparent 1.5px), radial-gradient(#334155 1.5px, #0f172a 1.5px);
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.transition-all-300 {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Animations Request: Click effects */
+img:active,
+button:active,
+a:active {
+  transform: scale(0.95);
+  transition: transform 0.1s ease-in-out;
+}
+
+/* Enhanced hover for text */
+h1:hover,
+h2:hover,
+h3:hover {
+  color: #6366f1;
+  /* Indigo-500 on hover */
+  transition: color 0.3s ease;
+  cursor: default;
+}
+
+.dark h1:hover,
+.dark h2:hover,
+.dark h3:hover {
+  color: #818cf8;
+  /* Indigo-400 */
+}
+
+/* Dropdown Content Transitions */
+.accordion-content,
+.calm-dropdown-content {
+  transition: max-height 0.3s ease-out, opacity 0.3s ease;
+}
+
+/* Global Click Animation "Pop" */
+@keyframes pop-click {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.95);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pop-click {
+  animation: pop-click 0.2s ease-in-out;
+}

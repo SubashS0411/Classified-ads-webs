@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ClassifiedPro - Calm Market</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-[#fdfcf9] dark:bg-slate-950 transition-colors duration-500">
+
+    <!-- Navbar (Standard) -->
+    <nav
+        class="sticky top-0 z-[100] bg-white/60 dark:bg-slate-950/60 backdrop-blur-xl border-b border-white/50 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center space-x-8">
+                    <a href="index.html" class="flex items-center space-x-2 group">
+                        <div
+                            class="w-12 h-12 bg-slate-900 dark:bg-white rounded-2xl flex items-center justify-center text-white dark:text-slate-900 font-bold text-2xl shadow-xl group-hover:rotate-6 transition-transform">
+                            C</div>
+                        <span
+                            class="text-2xl font-bold tracking-tighter text-slate-900 dark:text-white hidden sm:block">Classified<span
+                                class="text-slate-400">Pro</span></span>
+                    </a>
+
+                    <!-- Desktop Menu -->
+                    <div class="hidden lg:flex items-center space-x-1">
+                        <div class="relative group">
+                            <button
+                                class="dropdown-trigger flex items-center space-x-1 px-4 py-2 rounded-xl text-sm font-bold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                                <span>Home</span>
+                                <i data-lucide="chevron-down"
+                                    class="w-4 h-4 transition-transform group-hover:rotate-180"></i>
+                            </button>
+                            <div
+                                class="absolute top-full left-0 w-48 bg-white dark:bg-slate-900 shadow-2xl rounded-2xl border border-slate-100 dark:border-slate-800 p-2 hidden opacity-0 translate-y-2 transition-all duration-200">
+                                <a href="index.html"
+                                    class="block px-4 py-3 text-sm font-semibold rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300">Home
+                                    Bold (V1)</a>
+                                <a href="index2.html"
+                                    class="block px-4 py-3 text-sm font-semibold rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300">Home
+                                    Calm (V2)</a>
+                            </div>
+                        </div>
+
+                        <a href="about.html"
+                            class="px-4 py-2 rounded-xl text-sm font-bold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">About</a>
+                        <a href="services.html"
+                            class="px-4 py-2 rounded-xl text-sm font-bold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">Services</a>
+                        <a href="contact.html"
+                            class="px-4 py-2 rounded-xl text-sm font-bold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">Contact</a>
+
+                        <div class="relative group">
+                            <button
+                                class="dropdown-trigger flex items-center space-x-1 px-4 py-2 rounded-xl text-sm font-bold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                                <span>Dashboards</span>
+                                <i data-lucide="chevron-down"
+                                    class="w-4 h-4 transition-transform group-hover:rotate-180"></i>
+                            </button>
+                            <div
+                                class="absolute top-full left-0 w-56 bg-white dark:bg-slate-900 shadow-2xl rounded-2xl border border-slate-100 dark:border-slate-800 p-2 hidden opacity-0 translate-y-2 transition-all duration-200">
+                                <a href="dashboard.html"
+                                    class="flex items-center space-x-3 px-4 py-3 text-sm font-semibold rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300">
+                                    <i data-lucide="user" class="w-4 h-4"></i>
+                                    <span>User Dashboard</span>
+                                </a>
+                                <a href="admin.html"
+                                    class="flex items-center space-x-3 px-4 py-3 text-sm font-semibold rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300">
+                                    <i data-lucide="shield-check" class="w-4 h-4"></i>
+                                    <span>Admin Control</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex items-center space-x-2 sm:space-x-4">
+                    <button id="dir-toggle"
+                        class="p-3 rounded-2xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all shadow-sm hidden sm:block">
+                        <i data-lucide="globe" class="w-5 h-5"></i>
+                    </button>
+                    <button id="theme-toggle"
+                        class="p-3 rounded-2xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all shadow-sm">
+                        <i data-lucide="moon" class="w-5 h-5"></i>
+                    </button>
+                    <button id="mobile-menu-btn"
+                        class="lg:hidden p-3 rounded-2xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-indigo-600 hover:text-white transition-all shadow-sm">
+                        <i data-lucide="menu" class="w-5 h-5"></i>
+                    </button>
+                    <a href="login.html"
+                        class="px-6 py-3 bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold rounded-2xl hover:bg-slate-800 transition-all shadow-xl active:scale-95 hidden sm:block">
+                        Get Started
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu Container -->
+        <div id="mobile-menu"
+            class="hidden lg:hidden border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-950/95 px-4 py-4 space-y-4 shadow-xl backdrop-blur-xl">
+            <a href="index.html"
+                class="block px-4 py-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 font-bold dark:text-white">Home
+                (V1)</a>
+            <a href="index2.html"
+                class="block px-4 py-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 font-bold dark:text-white">Home
+                (V2)</a>
+            <a href="about.html"
+                class="block px-4 py-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 font-bold dark:text-white">About
+                Us</a>
+            <a href="services.html"
+                class="block px-4 py-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 font-bold dark:text-white">Services</a>
+            <a href="contact.html"
+                class="block px-4 py-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 font-bold dark:text-white">Contact</a>
+            <div class="border-t border-slate-200 dark:border-slate-800 pt-4">
+                <a href="dashboard.html"
+                    class="flex items-center space-x-2 px-4 py-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 font-bold dark:text-white">
+                    <i data-lucide="user" class="w-4 h-4"></i><span>User Dashboard</span>
+                </a>
+                <a href="admin.html"
+                    class="flex items-center space-x-2 px-4 py-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 font-bold dark:text-white">
+                    <i data-lucide="shield-check" class="w-4 h-4"></i><span>Admin Dashboard</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Serene Hero -->
+    <section class="relative h-[85vh] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="https://picsum.photos/seed/calm-hero-v3/1920/1080"
+                class="w-full h-full object-cover opacity-20 dark:opacity-10" alt="Hero Background">
+        </div>
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10 animate-fade-in-up">
+            <span class="text-sm font-bold tracking-[0.3em] uppercase text-indigo-400 mb-6 block">The Curated
+                Marketplace</span>
+            <h1 class="text-6xl md:text-8xl font-serif italic text-slate-800 dark:text-white leading-[1.1] mb-8">
+                Beautiful <span class="text-indigo-400">objects</span> for a mindful life.
+            </h1>
+            <p class="text-lg text-slate-500 dark:text-slate-400 mb-12 max-w-xl mx-auto font-light leading-relaxed">
+                Find peace in quality. Connect with authentic creators and discover unique listings.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-8">
+                <button
+                    class="px-12 py-5 bg-slate-900 dark:bg-white dark:text-slate-900 text-white rounded-full font-medium hover:bg-slate-800 transition-all shadow-lg active:scale-95">Browse
+                    Collection</button>
+                <button
+                    class="text-slate-600 dark:text-slate-400 font-bold border-b border-slate-300 hover:text-indigo-600 hover:border-indigo-600 transition-all">List
+                    Your Item</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Soft Search -->
+    <section class="max-w-4xl mx-auto px-4 -mt-10 relative z-20">
+        <div
+            class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-3xl p-6 rounded-[3rem] shadow-xl border border-white dark:border-slate-800 flex items-center">
+            <i data-lucide="search" class="w-6 h-6 text-slate-300 mr-4"></i>
+            <input type="text" placeholder="Search for unique treasures..."
+                class="flex-1 bg-transparent outline-none text-xl font-light text-slate-600 dark:text-white">
+            <button
+                class="w-14 h-14 bg-indigo-50 dark:bg-slate-800 rounded-full flex items-center justify-center text-indigo-400 hover:bg-indigo-600 hover:text-white transition-all shadow-sm">
+                <i data-lucide="compass" class="w-6 h-6"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- Modern Category Grid (Home 2 Distinct Style) -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <h2 class="text-4xl font-serif italic text-slate-800 dark:text-white mb-12 text-center">Browse Collections</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+            <!-- Electronics -->
+            <a href="#"
+                class="group relative h-64 rounded-[2.5rem] overflow-hidden bg-slate-100 dark:bg-slate-900 border border-white dark:border-slate-800 shadow-xl transition-all hover:scale-[1.02]">
+                <img src="https://picsum.photos/seed/cat-tech/400/600"
+                    class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity">
+                <div
+                    class="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-slate-900/80 to-transparent">
+                    <h3 class="text-2xl font-bold text-white mb-1">Electronics</h3>
+                    <p
+                        class="text-slate-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0">
+                        Gadgets & Tech</p>
+                </div>
+            </a>
+            <!-- Real Estate -->
+            <a href="#"
+                class="group relative h-64 rounded-[2.5rem] overflow-hidden bg-slate-100 dark:bg-slate-900 border border-white dark:border-slate-800 shadow-xl transition-all hover:scale-[1.02]">
+                <img src="https://picsum.photos/seed/cat-home/400/600"
+                    class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity">
+                <div
+                    class="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-slate-900/80 to-transparent">
+                    <h3 class="text-2xl font-bold text-white mb-1">Real Estate</h3>
+                    <p
+                        class="text-slate-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0">
+                        Dream Homes</p>
+                </div>
+            </a>
+            <!-- Vehicles -->
+            <a href="#"
+                class="group relative h-64 rounded-[2.5rem] overflow-hidden bg-slate-100 dark:bg-slate-900 border border-white dark:border-slate-800 shadow-xl transition-all hover:scale-[1.02]">
+                <img src="https://picsum.photos/seed/cat-car/400/600"
+                    class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity">
+                <div
+                    class="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-slate-900/80 to-transparent">
+                    <h3 class="text-2xl font-bold text-white mb-1">Vehicles</h3>
+                    <p
+                        class="text-slate-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0">
+                        Cars & Bikes</p>
+                </div>
+            </a>
+            <!-- Fashion -->
+            <a href="#"
+                class="group relative h-64 rounded-[2.5rem] overflow-hidden bg-slate-100 dark:bg-slate-900 border border-white dark:border-slate-800 shadow-xl transition-all hover:scale-[1.02]">
+                <img src="https://picsum.photos/seed/cat-fashion/400/600"
+                    class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity">
+                <div
+                    class="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-slate-900/80 to-transparent">
+                    <h3 class="text-2xl font-bold text-white mb-1">Fashion</h3>
+                    <p
+                        class="text-slate-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0">
+                        Style & Trends</p>
+                </div>
+            </a>
+            <!-- Jobs -->
+            <a href="#"
+                class="group relative h-64 rounded-[2.5rem] overflow-hidden bg-slate-100 dark:bg-slate-900 border border-white dark:border-slate-800 shadow-xl transition-all hover:scale-[1.02]">
+                <img src="https://picsum.photos/seed/cat-job/400/600"
+                    class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity">
+                <div
+                    class="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-slate-900/80 to-transparent">
+                    <h3 class="text-2xl font-bold text-white mb-1">Jobs</h3>
+                    <p
+                        class="text-slate-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0">
+                        Career Growth</p>
+                </div>
+            </a>
+            <!-- Home Decor -->
+            <a href="#"
+                class="group relative h-64 rounded-[2.5rem] overflow-hidden bg-slate-100 dark:bg-slate-900 border border-white dark:border-slate-800 shadow-xl transition-all hover:scale-[1.02]">
+                <img src="https://picsum.photos/seed/cat-decor/400/600"
+                    class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity">
+                <div
+                    class="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-slate-900/80 to-transparent">
+                    <h3 class="text-2xl font-bold text-white mb-1">Home Decor</h3>
+                    <p
+                        class="text-slate-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0">
+                        Interior Design</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Handpicked Gallery -->
+    <section class="py-24 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex justify-between items-end mb-16">
+                <h2 class="text-4xl font-serif text-slate-800 dark:text-white italic">The Curator's Choice</h2>
+            </div>
+            <!-- Adjusted for exactly 5 items -->
+            <div class="flex flex-wrap justify-center gap-10">
+                <!-- Item 1 -->
+                <div class="group cursor-pointer w-full md:w-[calc(50%-2rem)] lg:w-[calc(20%-2rem)]">
+                    <div
+                        class="aspect-[3/4] rounded-[2.5rem] overflow-hidden mb-6 bg-slate-100 dark:bg-slate-900 shadow-sm group-hover:shadow-2xl transition-all">
+                        <img src="https://picsum.photos/seed/calm-item-v3-0/600/800"
+                            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                            alt="Calm">
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 dark:text-slate-100 mb-1">Curated Item #1</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">$120.00</p>
+                </div>
+                <!-- Item 2 -->
+                <div class="group cursor-pointer w-full md:w-[calc(50%-2rem)] lg:w-[calc(20%-2rem)]">
+                    <div
+                        class="aspect-[3/4] rounded-[2.5rem] overflow-hidden mb-6 bg-slate-100 dark:bg-slate-900 shadow-sm group-hover:shadow-2xl transition-all">
+                        <img src="https://picsum.photos/seed/calm-item-v3-1/600/800"
+                            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                            alt="Calm">
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 dark:text-slate-100 mb-1">Curated Item #2</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">$85.00</p>
+                </div>
+                <!-- Item 3 -->
+                <div class="group cursor-pointer w-full md:w-[calc(50%-2rem)] lg:w-[calc(20%-2rem)]">
+                    <div
+                        class="aspect-[3/4] rounded-[2.5rem] overflow-hidden mb-6 bg-slate-100 dark:bg-slate-900 shadow-sm group-hover:shadow-2xl transition-all">
+                        <img src="https://picsum.photos/seed/calm-item-v3-2/600/800"
+                            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                            alt="Calm">
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 dark:text-slate-100 mb-1">Curated Item #3</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">$210.00</p>
+                </div>
+                <!-- Item 4 -->
+                <div class="group cursor-pointer w-full md:w-[calc(50%-2rem)] lg:w-[calc(20%-2rem)]">
+                    <div
+                        class="aspect-[3/4] rounded-[2.5rem] overflow-hidden mb-6 bg-slate-100 dark:bg-slate-900 shadow-sm group-hover:shadow-2xl transition-all">
+                        <img src="https://picsum.photos/seed/calm-item-v3-extra1/600/800"
+                            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                            alt="Calm">
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 dark:text-slate-100 mb-1">Leather Totebag</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">$140.00</p>
+                </div>
+                <!-- Item 5 -->
+                <div class="group cursor-pointer w-full md:w-[calc(50%-2rem)] lg:w-[calc(20%-2rem)]">
+                    <div
+                        class="aspect-[3/4] rounded-[2.5rem] overflow-hidden mb-6 bg-slate-100 dark:bg-slate-900 shadow-sm group-hover:shadow-2xl transition-all">
+                        <img src="https://picsum.photos/seed/calm-item-v3-extra2/600/800"
+                            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                            alt="Calm">
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 dark:text-slate-100 mb-1">Ceramic Vase</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">$65.00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works (Steps) -->
+    <section class="py-32 bg-white dark:bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-5xl font-serif italic text-slate-800 dark:text-white text-center mb-20">The Gentle Process
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-16 relative">
+                <div
+                    class="hidden md:block absolute top-12 left-0 right-0 h-0.5 bg-slate-200 dark:bg-slate-800 pointer-events-none">
+                </div>
+                <!-- Step 1 -->
+                <div class="relative flex flex-col items-center text-center">
+                    <div
+                        class="w-24 h-24 bg-white dark:bg-slate-900 border-2 border-slate-200 dark:border-slate-700 rounded-full flex items-center justify-center text-2xl font-serif italic text-slate-800 dark:text-white z-10 mb-8 shadow-lg">
+                        1</div>
+                    <h3 class="text-xl font-bold text-slate-800 dark:text-slate-200 mb-4">Discover</h3>
+                    <p class="text-slate-500 dark:text-slate-400 leading-relaxed">Browse through our curated collection
+                        of high-quality items from trusted sellers.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="relative flex flex-col items-center text-center">
+                    <div
+                        class="w-24 h-24 bg-white dark:bg-slate-900 border-2 border-slate-200 dark:border-slate-700 rounded-full flex items-center justify-center text-2xl font-serif italic text-slate-800 dark:text-white z-10 mb-8 shadow-lg">
+                        2</div>
+                    <h3 class="text-xl font-bold text-slate-800 dark:text-slate-200 mb-4">Connect</h3>
+                    <p class="text-slate-500 dark:text-slate-400 leading-relaxed">Reach out to sellers directly through
+                        our calm, distraction-free messaging system.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="relative flex flex-col items-center text-center">
+                    <div
+                        class="w-24 h-24 bg-white dark:bg-slate-900 border-2 border-slate-200 dark:border-slate-700 rounded-full flex items-center justify-center text-2xl font-serif italic text-slate-800 dark:text-white z-10 mb-8 shadow-lg">
+                        3</div>
+                    <h3 class="text-xl font-bold text-slate-800 dark:text-slate-200 mb-4">Exchange</h3>
+                    <p class="text-slate-500 dark:text-slate-400 leading-relaxed">Complete the trade securely and enjoy
+                        your new unique possession.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curated Collections (Scrollable Tabbed Content for Home 2) -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 border-t border-slate-100 dark:border-slate-800">
+        <h2 class="text-4xl font-serif italic text-slate-800 dark:text-white mb-10 text-center">Curated Collections</h2>
+
+        <!-- Centered Tab Chips -->
+        <div class="flex justify-center flex-wrap gap-4 mb-16">
+            <button
+                class="tab-btn px-8 py-3 rounded-full font-serif italic bg-slate-900 dark:bg-white text-white dark:text-slate-900 border border-transparent shadow-lg transition-transform hover:scale-105 active:scale-95"
+                data-tab-target="#collection-minimal">Minimalist</button>
+            <button
+                class="tab-btn px-8 py-3 rounded-full font-serif italic bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 shadow-sm transition-transform hover:scale-105 active:scale-95 hover:border-slate-400"
+                data-tab-target="#collection-vintage">Vintage</button>
+            <button
+                class="tab-btn px-8 py-3 rounded-full font-serif italic bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 shadow-sm transition-transform hover:scale-105 active:scale-95 hover:border-slate-400"
+                data-tab-target="#collection-artisan">Artisan</button>
+            <button
+                class="tab-btn px-8 py-3 rounded-full font-serif italic bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 shadow-sm transition-transform hover:scale-105 active:scale-95 hover:border-slate-400"
+                data-tab-target="#collection-audio">Audiophile</button>
+        </div>
+
+        <!-- Tab Content: Minimalist -->
+        <div id="collection-minimal" class="tab-content grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
+            <!-- 5 Minimal Items -->
+            <div class="group cursor-pointer">
+                <div class="aspect-square rounded-[2rem] overflow-hidden bg-slate-100 dark:bg-slate-900 mb-4">
+                    <img src="https://picsum.photos/seed/mini-1/400/400"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                </div>
+                <h4 class="font-serif text-slate-900 dark:text-white">Concrete Lamp</h4>
+                <p class="text-xs text-slate-500 uppercase tracking-widest mt-1">Lighting</p>
+            </div>
+            <div class="group cursor-pointer">
+                <div class="aspect-square rounded-[2rem] overflow-hidden bg-slate-100 dark:bg-slate-900 mb-4">
+                    <img src="https://picsum.photos/seed/mini-2/400/400"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                </div>
+                <h4 class="font-serif text-slate-900 dark:text-white">White Vase</h4>
+                <p class="text-xs text-slate-500 uppercase tracking-widest mt-1">Decor</p>
+            </div>
+            <div class="group cursor-pointer">
+                <div class="aspect-square rounded-[2rem] overflow-hidden bg-slate-100 dark:bg-slate-900 mb-4">
+                    <img src="https://picsum.photos/seed/mini-3/400/400"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                </div>
+                <h4 class="font-serif text-slate-900 dark:text-white">Oak Chair</h4>
+                <p class="text-xs text-slate-500 uppercase tracking-widest mt-1">Furniture</p>
+            </div>
+            <div class="group cursor-pointer">
+                <div class="aspect-square rounded-[2rem] overflow-hidden bg-slate-100 dark:bg-slate-900 mb-4">
+                    <img src="https://picsum.photos/seed/mini-4/400/400"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                </div>
+                <h4 class="font-serif text-slate-900 dark:text-white">Glass Carafe</h4>
+                <p class="text-xs text-slate-500 uppercase tracking-widest mt-1">Dining</p>
+            </div>
+            <div class="group cursor-pointer">
+                <div class="aspect-square rounded-[2rem] overflow-hidden bg-slate-100 dark:bg-slate-900 mb-4">
+                    <img src="https://picsum.photos/seed/mini-5/400/400"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                </div>
+                <h4 class="font-serif text-slate-900 dark:text-white">Linen Throw</h4>
+                <p class="text-xs text-slate-500 uppercase tracking-widest mt-1">Textile</p>
+            </div>
+        </div>
+
+        <!-- Tab Content: Vintage -->
+        <div id="collection-vintage" class="tab-content hidden grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
+            <div class="group cursor-pointer">
+                <div class="aspect-square rounded-[2rem] overflow-hidden bg-slate-100 dark:bg-slate-900 mb-4">
+                    <img src="https://picsum.photos/seed/vin-1/400/400"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 sepia">
+                </div>
+                <h4 class="font-serif text-slate-900 dark:text-white">Typewriter</h4>
+                <p class="text-xs text-slate-500 uppercase tracking-widest mt-1">1950s</p>
+            </div>
+            <div class="group cursor-pointer">
+                <div class="aspect-square rounded-[2rem] overflow-hidden bg-slate-100 dark:bg-slate-900 mb-4">
+                    <img src="https://picsum.photos/seed/vin-2/400/400"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 sepia">
+                </div>
+                <h4 class="font-serif text-slate-900 dark:text-white">Film Camera</h4>
+                <p class="text-xs text-slate-500 uppercase tracking-widest mt-1">Photography</p>
+            </div>
+            <div class="group cursor-pointer">
+                <div class="aspect-square rounded-[2rem] overflow-hidden bg-slate-100 dark:bg-slate-900 mb-4">
+                    <img src="https://picsum.photos/seed/vin-3/400/400"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 sepia">
+                </div>
+                <h4 class="font-serif text-slate-900 dark:text-white">Leather Trunk</h4>
+                <p class="text-xs text-slate-500 uppercase tracking-widest mt-1">Travel</p>
+            </div>
+            <div class="group cursor-pointer">
+                <div class="aspect-square rounded-[2rem] overflow-hidden bg-slate-100 dark:bg-slate-900 mb-4">
+                    <img src="https://picsum.photos/seed/vin-4/400/400"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 sepia">
+                </div>
+                <h4 class="font-serif text-slate-900 dark:text-white">Desk Fan</h4>
+                <p class="text-xs text-slate-500 uppercase tracking-widest mt-1">Industrial</p>
+            </div>
+            <div class="group cursor-pointer">
+                <div class="aspect-square rounded-[2rem] overflow-hidden bg-slate-100 dark:bg-slate-900 mb-4">
+                    <img src="https://picsum.photos/seed/vin-5/400/400"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 sepia">
+                </div>
+                <h4 class="font-serif text-slate-900 dark:text-white">Brass Telescope</h4>
+                <p class="text-xs text-slate-500 uppercase tracking-widest mt-1">Nautical</p>
+            </div>
+        </div>
+
+        <!-- Tab Content: Artisan -->
+        <div id="collection-artisan" class="tab-content hidden grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
+            <div class="group cursor-pointer">
+                <div class="aspect-square rounded-[2rem] overflow-hidden bg-slate-100 dark:bg-slate-900 mb-4">
+                    <img src="https://picsum.photos/seed/art-1/400/400"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                </div>
+                <h4 class="font-serif text-slate-900 dark:text-white">Ceramic Bowl</h4>
+                <p class="text-xs text-slate-500 uppercase tracking-widest mt-1">Handmade</p>
+            </div>
+            <div class="group cursor-pointer">
+                <div class="aspect-square rounded-[2rem] overflow-hidden bg-slate-100 dark:bg-slate-900 mb-4">
+                    <img src="https://picsum.photos/seed/art-2/400/400"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                </div>
+                <h4 class="font-serif text-slate-900 dark:text-white">Woven Basket</h4>
+                <p class="text-xs text-slate-500 uppercase tracking-widest mt-1">Craft</p>
+            </div>
+            <div class="group cursor-pointer">
+                <div class="aspect-square rounded-[2rem] overflow-hidden bg-slate-100 dark:bg-slate-900 mb-4">
+                    <img src="https://picsum.photos/seed/art-3/400/400"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                </div>
+                <h4 class="font-serif text-slate-900 dark:text-white">Wooden Spoon</h4>
+                <p class="text-xs text-slate-500 uppercase tracking-widest mt-1">Kitchen</p>
+            </div>
+            <div class="group cursor-pointer">
+                <div class="aspect-square rounded-[2rem] overflow-hidden bg-slate-100 dark:bg-slate-900 mb-4">
+                    <img src="https://picsum.photos/seed/art-4/400/400"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                </div>
+                <h4 class="font-serif text-slate-900 dark:text-white">Clay Mug</h4>
+                <p class="text-xs text-slate-500 uppercase tracking-widest mt-1">Drinkware</p>
+            </div>
+            <div class="group cursor-pointer">
+                <div class="aspect-square rounded-[2rem] overflow-hidden bg-slate-100 dark:bg-slate-900 mb-4">
+                    <img src="https://picsum.photos/seed/art-5/400/400"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                </div>
+                <h4 class="font-serif text-slate-900 dark:text-white">Wall Hanging</h4>
+                <p class="text-xs text-slate-500 uppercase tracking-widest mt-1">Art</p>
+            </div>
+        </div>
+
+        <!-- Tab Content: Audio -->
+        <div id="collection-audio" class="tab-content hidden grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
+            <div class="group cursor-pointer">
+                <div class="aspect-square rounded-[2rem] overflow-hidden bg-slate-100 dark:bg-slate-900 mb-4">
+                    <img src="https://picsum.photos/seed/audi-1/400/400"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                </div>
+                <h4 class="font-serif text-slate-900 dark:text-white">Turntable</h4>
+                <p class="text-xs text-slate-500 uppercase tracking-widest mt-1">High Fidelity</p>
+            </div>
+            <div class="group cursor-pointer">
+                <div class="aspect-square rounded-[2rem] overflow-hidden bg-slate-100 dark:bg-slate-900 mb-4">
+                    <img src="https://picsum.photos/seed/audi-2/400/400"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                </div>
+                <h4 class="font-serif text-slate-900 dark:text-white">Headphones</h4>
+                <p class="text-xs text-slate-500 uppercase tracking-widest mt-1">Studio</p>
+            </div>
+            <div class="group cursor-pointer">
+                <div class="aspect-square rounded-[2rem] overflow-hidden bg-slate-100 dark:bg-slate-900 mb-4">
+                    <img src="https://picsum.photos/seed/audi-3/400/400"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                </div>
+                <h4 class="font-serif text-slate-900 dark:text-white">Speaker</h4>
+                <p class="text-xs text-slate-500 uppercase tracking-widest mt-1">Wireless</p>
+            </div>
+            <div class="group cursor-pointer">
+                <div class="aspect-square rounded-[2rem] overflow-hidden bg-slate-100 dark:bg-slate-900 mb-4">
+                    <img src="https://picsum.photos/seed/audi-4/400/400"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                </div>
+                <h4 class="font-serif text-slate-900 dark:text-white">Amplifier</h4>
+                <p class="text-xs text-slate-500 uppercase tracking-widest mt-1">Tube</p>
+            </div>
+            <div class="group cursor-pointer">
+                <div class="aspect-square rounded-[2rem] overflow-hidden bg-slate-100 dark:bg-slate-900 mb-4">
+                    <img src="https://picsum.photos/seed/audi-5/400/400"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                </div>
+                <h4 class="font-serif text-slate-900 dark:text-white">Microphone</h4>
+                <p class="text-xs text-slate-500 uppercase tracking-widest mt-1">Recording</p>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Elite Members -->
+    <section class="py-32 bg-slate-50 dark:bg-slate-900/50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-5xl font-serif italic text-slate-800 dark:text-white mb-16">Distinguished Collectors</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Member 1 -->
+                <div class="text-center group">
+                    <div
+                        class="w-48 h-48 mx-auto rounded-full overflow-hidden mb-6 border-4 border-white dark:border-slate-800 shadow-xl group-hover:scale-105 transition-transform">
+                        <img src="https://picsum.photos/seed/elite-1/200/200" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-800 dark:text-white">Eleanor P.</h4>
+                    <p class="text-indigo-500 font-serif italic text-sm">Antique Specialist</p>
+                </div>
+                <!-- Member 2 -->
+                <div class="text-center group">
+                    <div
+                        class="w-48 h-48 mx-auto rounded-full overflow-hidden mb-6 border-4 border-white dark:border-slate-800 shadow-xl group-hover:scale-105 transition-transform">
+                        <img src="https://picsum.photos/seed/elite-2/200/200" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-800 dark:text-white">Marcus T.</h4>
+                    <p class="text-indigo-500 font-serif italic text-sm">Horology Expert</p>
+                </div>
+                <!-- Member 3 -->
+                <div class="text-center group">
+                    <div
+                        class="w-48 h-48 mx-auto rounded-full overflow-hidden mb-6 border-4 border-white dark:border-slate-800 shadow-xl group-hover:scale-105 transition-transform">
+                        <img src="https://picsum.photos/seed/elite-3/200/200" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-800 dark:text-white">Julia R.</h4>
+                    <p class="text-indigo-500 font-serif italic text-sm">Design Curator</p>
+                </div>
+                <!-- Member 4 -->
+                <div class="text-center group">
+                    <div
+                        class="w-48 h-48 mx-auto rounded-full overflow-hidden mb-6 border-4 border-white dark:border-slate-800 shadow-xl group-hover:scale-105 transition-transform">
+                        <img src="https://picsum.photos/seed/elite-4/200/200" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-800 dark:text-white">David B.</h4>
+                    <p class="text-indigo-500 font-serif italic text-sm">Automotive</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Insights (Blog) -->
+    <section class="py-32 bg-white dark:bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-end mb-16">
+                <h2 class="text-5xl font-serif italic text-slate-800 dark:text-white">Market Insights</h2>
+                <a href="#"
+                    class="text-slate-600 dark:text-slate-400 hover:text-indigo-600 border-b border-transparent hover:border-indigo-600 transition-all">Read
+                    Journal</a>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Article 1 -->
+                <div class="group flex flex-col md:flex-row gap-8 items-start">
+                    <div class="w-full md:w-1/2 aspect-[4/3] rounded-[2rem] overflow-hidden">
+                        <img src="https://picsum.photos/seed/blog-1/600/400"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="flex-1 py-4">
+                        <span
+                            class="text-xs font-bold tracking-widest uppercase text-indigo-500 mb-4 block">Trends</span>
+                        <h3
+                            class="text-2xl font-serif text-slate-800 dark:text-white mb-4 group-hover:text-indigo-600 transition-colors">
+                            The Return of Analog</h3>
+                        <p class="text-slate-500 dark:text-slate-400 leading-relaxed mb-6">Why film cameras and vinyl
+                            records are seeing a massive resurgence in 2026.</p>
+                        <button
+                            class="text-slate-900 dark:text-white font-bold text-sm underline decoration-slate-300 hover:decoration-indigo-600 underline-offset-4 transition-all">Read
+                            Story</button>
+                    </div>
+                </div>
+                <!-- Article 2 -->
+                <div class="group flex flex-col md:flex-row gap-8 items-start">
+                    <div class="w-full md:w-1/2 aspect-[4/3] rounded-[2rem] overflow-hidden">
+                        <img src="https://picsum.photos/seed/blog-2/600/400"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="flex-1 py-4">
+                        <span
+                            class="text-xs font-bold tracking-widest uppercase text-indigo-500 mb-4 block">Guide</span>
+                        <h3
+                            class="text-2xl font-serif text-slate-800 dark:text-white mb-4 group-hover:text-indigo-600 transition-colors">
+                            Investing in Design</h3>
+                        <p class="text-slate-500 dark:text-slate-400 leading-relaxed mb-6">How to spot future classics
+                            in furniture and mid-century lighting.</p>
+                        <button
+                            class="text-slate-900 dark:text-white font-bold text-sm underline decoration-slate-300 hover:decoration-indigo-600 underline-offset-4 transition-all">Read
+                            Story</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Minimal CTA -->
+    <section class="py-20 bg-slate-100 dark:bg-slate-900/30 border-t border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h3 class="text-4xl font-serif italic text-slate-800 dark:text-white mb-12">ClassifiedPro Curated</h3>
+            <div class="flex justify-center space-x-8 text-slate-400">
+                <i data-lucide="heart" class="w-5 h-5"></i>
+                <i data-lucide="leaf" class="w-5 h-5"></i>
+                <i data-lucide="wind" class="w-5 h-5"></i>
+                <i data-lucide="trees" class="w-5 h-5"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer same as main -->
+    <!-- Standardized Global Footer -->
+    <footer class="bg-slate-900 border-t border-slate-800 text-slate-300 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Branding Column -->
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-2">
+                        <div class="bg-indigo-600 p-2 rounded-lg">
+                            <span class="text-white font-black text-xl">C</span>
+                        </div>
+                        <span class="text-2xl font-black text-white tracking-tight">ClassifiedPro</span>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        The world’s most modern classified ads platform. Sell your items, find services, and connect
+                        with
+                        your community.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="index.html" class="hover:text-indigo-400 transition-colors">Home Page</a></li>
+                        <li><a href="about.html" class="hover:text-indigo-400 transition-colors">About Us</a></li>
+                        <li><a href="services.html" class="hover:text-indigo-400 transition-colors">Our Services</a>
+                        </li>
+                        <li><a href="contact.html" class="hover:text-indigo-400 transition-colors">Contact Support</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Account -->
+                <div>
+                    <h4 class="text-white font-bold mb-6">Account</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="dashboard.html" class="hover:text-indigo-400 transition-colors">User Dashboard</a>
+                        </li>
+                        <li><a href="admin.html" class="hover:text-indigo-400 transition-colors">Admin Area</a></li>
+                        <li><a href="login.html" class="hover:text-indigo-400 transition-colors">Login / Sign Up</a>
+                        </li>
+                        <li><a href="#" class="hover:text-indigo-400 transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h4 class="text-white font-bold mb-6">Newsletter</h4>
+                    <p class="text-slate-400 text-sm mb-4">Stay updated with the latest ads.</p>
+                    <div class="flex gap-2">
+                        <input type="email" placeholder="Email address"
+                            class="bg-slate-800 border-none text-white text-sm rounded-lg w-full px-4 py-3 focus:ring-2 focus:ring-indigo-500 placeholder-slate-500">
+                        <button
+                            class="bg-indigo-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-indigo-700 transition-colors">Go</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-xs text-slate-500">© 2026 ClassifiedPro Inc. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-slate-400 hover:text-white transition-colors"><i data-lucide="facebook"
+                            class="w-5 h-5"></i></a>
+                    <a href="#" class="text-slate-400 hover:text-white transition-colors"><i data-lucide="twitter"
+                            class="w-5 h-5"></i></a>
+                    <a href="#" class="text-slate-400 hover:text-white transition-colors"><i data-lucide="instagram"
+                            class="w-5 h-5"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="rtltoggle.js"></script>
+</body>
+
+</html>
