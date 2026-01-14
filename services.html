@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advertising Services | ClassifiedPro</title>
+    <meta name="description"
+        content="Explore our 15+ specialized advertising services including listing boosts, verified badges, and AI tools.">
+    <meta name="keywords" content="classified ads, promote services, business listings, banner ads">
+    <link rel="canonical" href="services.html" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Pre-load Theme & Direction
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        const savedDir = localStorage.getItem('dir') || 'ltr';
+
+        const html = document.documentElement;
+        html.dir = savedDir;
+        if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+        } else {
+            html.classList.remove('dark');
+        }
+
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        outfit: ['Outfit', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            },
+            plugins: [
+                function ({ addVariant }) {
+                    addVariant('rtl', 'html[dir="rtl"] &');
+                }
+            ]
+        }
+    </script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-indigo-50 dark:bg-slate-900 transition-colors duration-300 bg-services">
+
+    <!-- Navbar -->
+    <nav
+        class="sticky top-0 z-[100] bg-white/90 dark:bg-slate-950/90 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center gap-8">
+                    <a href="index.html" class="flex items-center gap-2 group" dir="ltr">
+                        <div
+                            class="w-12 h-12 bg-indigo-600 rounded-2xl flex items-center justify-center text-white font-black text-2xl shadow-xl shadow-indigo-500/20 group-hover:rotate-6 transition-transform">
+                            C</div>
+                        <span
+                            class="text-2xl font-black tracking-tighter dark:text-white hidden sm:block">Classified<span
+                                class="text-indigo-600">Pro</span></span>
+                    </a>
+
+                    <!-- Desktop Menu -->
+                    <div class="hidden lg:flex items-center gap-1">
+                        <div class="relative group">
+                            <button
+                                class="dropdown-trigger flex items-center space-x-1 px-4 py-2 rounded-xl text-sm font-bold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                                <span>Home</span>
+                                <i data-lucide="chevron-down"
+                                    class="w-4 h-4 transition-transform group-hover:rotate-180"></i>
+                            </button>
+                            <div
+                                class="absolute top-full left-0 w-48 bg-white dark:bg-slate-900 shadow-2xl rounded-2xl border border-slate-100 dark:border-slate-800 p-2 hidden opacity-0 translate-y-2 transition-all duration-200">
+                                <a href="index.html"
+                                    class="block px-4 py-3 text-sm font-semibold rounded-xl hover:bg-indigo-50 dark:hover:bg-indigo-900/30 text-slate-700 dark:text-slate-300 hover:text-indigo-600">Home
+                                    Bold (V1)</a>
+                                <a href="index2.html"
+                                    class="block px-4 py-3 text-sm font-semibold rounded-xl hover:bg-indigo-50 dark:hover:bg-indigo-900/30 text-slate-700 dark:text-slate-300 hover:text-indigo-600">Home
+                                    Calm (V2)</a>
+                            </div>
+                        </div>
+
+                        <a href="about.html"
+                            class="px-4 py-2 rounded-xl text-sm font-bold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">About</a>
+                        <a href="services.html"
+                            class="px-4 py-2 rounded-xl text-sm font-bold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">Services</a>
+                        <a href="contact.html"
+                            class="px-4 py-2 rounded-xl text-sm font-bold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">Contact</a>
+
+                        <div class="relative group">
+                            <button
+                                class="dropdown-trigger flex items-center space-x-1 px-4 py-2 rounded-xl text-sm font-bold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                                <span>Dashboards</span>
+                                <i data-lucide="chevron-down"
+                                    class="w-4 h-4 transition-transform group-hover:rotate-180"></i>
+                            </button>
+                            <div
+                                class="absolute top-full left-0 w-56 bg-white dark:bg-slate-900 shadow-2xl rounded-2xl border border-slate-100 dark:border-slate-800 p-2 hidden opacity-0 translate-y-2 transition-all duration-200">
+                                <a href="user_dashboard.html"
+                                    class="flex items-center space-x-3 px-4 py-3 text-sm font-semibold rounded-xl hover:bg-indigo-50 dark:hover:bg-indigo-900/30 text-slate-700 dark:text-slate-300 hover:text-indigo-600">
+                                    <i data-lucide="user" class="w-4 h-4"></i>
+                                    <span>User Dashboard</span>
+                                </a>
+                                <a href="admin_dashboard.html"
+                                    class="flex items-center space-x-3 px-4 py-3 text-sm font-semibold rounded-xl hover:bg-indigo-50 dark:hover:bg-indigo-900/30 text-slate-700 dark:text-slate-300 hover:text-indigo-600">
+                                    <i data-lucide="shield-check" class="w-4 h-4"></i>
+                                    <span>Admin Control</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-4 sm:gap-6">
+                    <button id="dir-toggle"
+                        class="p-3 rounded-2xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-indigo-600 hover:text-white transition-all shadow-sm">
+                        <i data-lucide="globe" class="w-5 h-5"></i>
+                    </button>
+                    <button id="theme-toggle"
+                        class="p-3 rounded-2xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-indigo-600 hover:text-white transition-all shadow-sm">
+                        <i data-lucide="moon" class="w-5 h-5"></i>
+                    </button>
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn"
+                        class="lg:hidden p-3 rounded-2xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-indigo-600 hover:text-white transition-all shadow-sm">
+                        <i data-lucide="menu" class="w-5 h-5"></i>
+                    </button>
+                    <a href="login.html"
+                        class="px-6 py-3 bg-indigo-600 text-white font-black rounded-2xl hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-600/20 active:scale-95 hidden sm:block">
+                        Get Started
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu-overlay"
+        class="fixed inset-0 bg-black/60 z-[190] hidden opacity-0 transition-opacity duration-300 backdrop-blur-sm lg:hidden">
+    </div>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="mobile-menu"
+        class="fixed inset-y-0 left-0 w-[50%] z-[200] bg-white dark:bg-slate-950 shadow-2xl transform -translate-x-full transition-transform duration-300 flex flex-col h-full overflow-y-auto border-r border-slate-200 dark:border-slate-800 lg:hidden rtl:right-0 rtl:left-auto rtl:translate-x-full">
+
+        <div class="flex items-center justify-between p-4 border-b border-slate-100 dark:border-slate-800">
+            <span class="font-black text-xl tracking-tighter dark:text-white">Menu</span>
+            <button id="mobile-menu-close-btn"
+                class="p-2 text-slate-500 hover:text-rose-500 transition-colors rounded-full hover:bg-slate-100 dark:hover:bg-slate-800">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <div class="p-4 space-y-4">
+            <a href="index.html"
+                class="block px-4 py-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 font-bold dark:text-white transition-colors">Home
+                (V1)</a>
+            <a href="index2.html"
+                class="block px-4 py-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 font-bold dark:text-white transition-colors">Home
+                (V2)</a>
+            <a href="about.html"
+                class="block px-4 py-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 font-bold dark:text-white transition-colors">About
+                Us</a>
+            <a href="services.html"
+                class="block px-4 py-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 font-bold dark:text-white transition-colors">Services</a>
+            <a href="contact.html"
+                class="block px-4 py-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 font-bold dark:text-white transition-colors">Contact</a>
+
+            <div class="border-t border-slate-100 dark:border-slate-800 pt-4 mt-2">
+                <a href="user_dashboard.html"
+                    class="flex items-center space-x-2 px-4 py-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 font-bold dark:text-white transition-colors">
+                    <i data-lucide="user" class="w-4 h-4"></i><span>User Dashboard</span>
+                </a>
+                <a href="admin_dashboard.html"
+                    class="flex items-center space-x-2 px-4 py-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 font-bold dark:text-white transition-colors">
+                    <i data-lucide="shield-check" class="w-4 h-4"></i><span>Admin Dashboard</span>
+                </a>
+                <a href="login.html"
+                    class="flex items-center space-x-2 px-4 py-3 rounded-xl bg-indigo-600 text-white font-bold hover:bg-indigo-700 mt-4 justify-center shadow-lg shadow-indigo-600/20 active:scale-95 transition-all">
+                    <span>Get Started</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 1. Hero Section -->
+    <div
+        class="relative py-20 overflow-hidden bg-gradient-to-br from-indigo-900 via-blue-900 to-violet-900 animate-gradient-xy">
+        <!-- Floating Elements -->
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10">
+        </div>
+        <div class="absolute top-20 left-20 w-72 h-72 bg-white/5 rounded-full blur-[100px] animate-float"></div>
+        <div
+            class="absolute bottom-20 right-20 w-96 h-96 bg-purple-500/20 rounded-full blur-[100px] animate-pulse-slow">
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 text-center">
+            <h1 class="text-5xl md:text-8xl font-black text-white font-outfit mb-8 animate-fade-in-up">
+                Powerful Advertising Services <br><span class="text-indigo-300">That Sell Faster</span>
+            </h1>
+            <p class="text-xl text-slate-200 max-w-3xl mx-auto mb-12 font-medium animate-fade-in-up delay-200">
+                Promote your listings, reach verified buyers, and boost visibility using our 15+ smart classified
+                advertising tools.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-6 animate-zoom-in delay-400">
+                <a href="pricing-booking.html"
+                    class="px-10 py-5 bg-indigo-500 text-white font-black rounded-full hover:scale-105 hover:bg-indigo-400 transition-all shadow-lg btn-glow">Post
+                    an Ad</a>
+                <a href="pricing-booking.html"
+                    class="px-10 py-5 bg-white/10 backdrop-blur-md text-white border border-white/20 font-bold rounded-full hover:bg-white/20 transition-all btn-glow">View
+                    Pricing</a>
+                <a href="#core-services"
+                    class="px-10 py-5 bg-indigo-500 text-white font-black rounded-full hover:scale-105 hover:bg-indigo-400 transition-all shadow-lg btn-glow">Explore
+                    Categories</a>
+            </div>
+
+            <!-- Image Removed as per request -->
+        </div>
+
+        <!-- Wave Bottom -->
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-0 transform rotate-180">
+            <svg class="relative block w-[calc(100%+1.3px)] h-[100px]" data-name="Layer 1"
+                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path
+                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                    class="fill-indigo-50 dark:fill-slate-900"></path>
+            </svg>
+        </div>
+    </div>
+
+    <!-- 2. Core Advertising Services (15 Items) -->
+    <div id="core-services" class="py-24 max-w-7xl mx-auto px-4">
+        <div class="text-center mb-20">
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 dark:text-white font-outfit">OUR EXTENSIVE <span
+                    class="text-indigo-600">SUITE</span></h2>
+            <p class="text-slate-700 mt-4 text-xl">15 Specialized ways to grow your presence.</p>
+        </div>
+
+        <div class="grid grid-cols-1 gap-24">
+
+            <!-- 1. Free Classified Listings -->
+            <div class="flex flex-col md:flex-row items-center gap-12 group">
+                <div class="flex-1 animate-slide-right">
+                    <div
+                        class="w-16 h-16 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="tag" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-3xl font-black dark:text-white mb-4">1. Free Classified Listings</h3>
+                    <p class="text-lg text-slate-600 dark:text-slate-200 mb-6">Post ads quickly across multiple
+                        categories with instant exposure.</p>
+                    <div class="flex gap-4 mb-6">
+                        <a href="pricing-booking.html"
+                            class="px-6 py-2 bg-indigo-600 text-white font-bold rounded-lg hover:bg-indigo-700">Post
+                            Free Ad</a>
+                    </div>
+                    <!-- Dropdown -->
+                    <div class="border-t border-slate-200 dark:border-slate-800 pt-4">
+                        <button
+                            class="accordion-trigger flex items-center justify-between w-full text-left font-bold text-slate-700 dark:text-white">
+                            <span>View Details & Rules</span> <i data-lucide="plus" class="w-5 h-5 text-indigo-600"></i>
+                        </button>
+                        <div class="accordion-content hidden mt-4 text-sm text-slate-700 space-y-2">
+                            <p>• Duration: 30 days active.</p>
+                            <p>• Limit: 3 free ads per user.</p>
+                            <p>• Categories: All except Real Estate & Jobs.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-1"> <img src="Assets/51.jpeg"
+                        class="rounded-3xl shadow-xl transition-transform duration-500 opacity-0 animate-on-scroll saas-hover-image stagger-1">
+                </div>
+            </div>
+
+            <!-- 2. Featured Ads Boost -->
+            <div class="flex flex-col md:flex-row-reverse items-center gap-12 group">
+                <div class="flex-1 animate-slide-left">
+                    <div
+                        class="w-16 h-16 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="zap" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-3xl font-black dark:text-white mb-4">2. Featured Ads Boost</h3>
+                    <p class="text-lg text-slate-600 dark:text-slate-200 mb-6">Highlight your ads at the top of search
+                        results. 10x more views.</p>
+                    <div class="flex gap-4 mb-6">
+                        <a href="pricing-booking.html"
+                            class="px-6 py-2 bg-amber-500 text-white font-bold rounded-lg hover:bg-amber-600">Boost
+                            Now</a>
+                    </div>
+                    <div class="border-t border-slate-200 dark:border-slate-800 pt-4">
+                        <button
+                            class="accordion-trigger flex items-center justify-between w-full text-left font-bold text-slate-700 dark:text-white">
+                            <span>Ranking & Stats</span> <i data-lucide="plus" class="w-5 h-5 text-indigo-600"></i>
+                        </button>
+                        <div class="accordion-content hidden mt-4 text-sm text-slate-700 space-y-2">
+                            <p>• Position: Sticky top 3 rows.</p>
+                            <p>• Badge: 'FEATURED' gold sash.</p>
+                            <p>• CTR: Avg 5.2% click-through rate.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-1"> <img src="Assets/52.jpeg"
+                        class="rounded-3xl shadow-xl transition-transform duration-500 opacity-0 animate-on-scroll saas-hover-image stagger-2">
+                </div>
+            </div>
+
+            <!-- 3. Location-Based Advertising -->
+            <div class="flex flex-col md:flex-row items-center gap-12 group">
+                <div class="flex-1">
+                    <div class="w-16 h-16 bg-red-100 text-red-600 rounded-2xl flex items-center justify-center mb-6"> <i
+                            data-lucide="map-pin" class="w-8 h-8"></i> </div>
+                    <h3 class="text-3xl font-black dark:text-white mb-4">3. Location-Based Advertising</h3>
+                    <p class="text-lg text-slate-600 dark:text-slate-200 mb-6">Target buyers near your city or zip code.
+                    </p>
+                    <div class="flex gap-4 mb-6">
+                        <a href="pricing-booking.html"
+                            class="px-6 py-2 bg-red-500 text-white font-bold rounded-lg hover:bg-red-600">Set
+                            Location</a>
+                    </div>
+                    <div class="border-t border-slate-200 dark:border-slate-800 pt-4">
+                        <button
+                            class="accordion-trigger flex items-center justify-between w-full text-left font-bold text-slate-700 dark:text-white">
+                            <span>Geofencing Specs</span> <i data-lucide="plus" class="w-5 h-5 text-indigo-600"></i>
+                        </button>
+                        <div class="accordion-content hidden mt-4 text-sm text-slate-700 space-y-2">
+                            <p>• Radius: 5km - 50km targeting.</p>
+                            <p>• Local Boost: Priority in "Near Me" searches.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-1"> <img src="Assets/53.jpeg"
+                        class="rounded-3xl shadow-xl opacity-0 animate-on-scroll saas-hover-image stagger-1">
+                </div>
+            </div>
+
+            <!-- 4. Business Storefronts -->
+            <div class="flex flex-col md:flex-row-reverse items-center gap-12 group">
+                <div class="flex-1">
+                    <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="store" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-3xl font-black dark:text-white mb-4">4. Business Storefront Pages</h3>
+                    <p class="text-lg text-slate-600 dark:text-slate-200 mb-6">Your own branded mini-website inside our
+                        platform.</p>
+                    <div class="flex gap-4 mb-6">
+                        <a href="pricing-booking.html"
+                            class="px-6 py-2 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700">Create
+                            Store</a>
+                    </div>
+                    <div class="border-t border-slate-200 dark:border-slate-800 pt-4">
+                        <button
+                            class="accordion-trigger flex items-center justify-between w-full text-left font-bold text-slate-700 dark:text-white">
+                            <span>Includes</span> <i data-lucide="plus" class="w-5 h-5 text-indigo-600"></i>
+                        </button>
+                        <div class="accordion-content hidden mt-4 text-sm text-slate-700 space-y-2">
+                            <p>• Custom Banner & Logo.</p>
+                            <p>• "All Ads by User" exclusive tab.</p>
+                            <p>• Verified Business Checkmark.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-1"> <img src="Assets/54.jpeg"
+                        class="rounded-3xl shadow-xl opacity-0 animate-on-scroll saas-hover-image stagger-2">
+                </div>
+            </div>
+
+            <!-- 5. Premium Banner Advertising -->
+            <div class="flex flex-col md:flex-row items-center gap-12 group">
+                <div class="flex-1">
+                    <div
+                        class="w-16 h-16 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="image" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-3xl font-black dark:text-white mb-4">5. Premium Banner Ads</h3>
+                    <p class="text-lg text-slate-600 dark:text-slate-200 mb-6">Visual display ads on high-traffic
+                        category headers.</p>
+                    <div class="flex gap-4 mb-6">
+                        <a href="pricing-booking.html"
+                            class="px-6 py-2 bg-purple-600 text-white font-bold rounded-lg hover:bg-purple-700">Book
+                            Banner</a>
+                    </div>
+                    <div class="border-t border-slate-200 dark:border-slate-800 pt-4">
+                        <button
+                            class="accordion-trigger flex items-center justify-between w-full text-left font-bold text-slate-700 dark:text-white">
+                            <span>Sizes & CPM</span> <i data-lucide="plus" class="w-5 h-5 text-indigo-600"></i>
+                        </button>
+                        <div class="accordion-content hidden mt-4 text-sm text-slate-700 space-y-2">
+                            <p>• 728x90 Leaderboard.</p>
+                            <p>• 300x250 Sidebar Rectangle.</p>
+                            <p>• Pricing: Starts at $5 CPM.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-1"> <img src="Assets/55.jpeg"
+                        class="rounded-3xl shadow-xl opacity-0 animate-on-scroll saas-hover-image stagger-1">
+                </div>
+            </div>
+
+            <!-- 6. Sponsored Search Results -->
+            <div class="flex flex-col md:flex-row-reverse items-center gap-12 group">
+                <div class="flex-1">
+                    <div class="w-16 h-16 bg-teal-100 text-teal-600 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="search" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-3xl font-black dark:text-white mb-4">6. Sponsored Search Results</h3>
+                    <p class="text-lg text-slate-600 dark:text-slate-200 mb-6">Appear as the #1 result for specific
+                        keywords.</p>
+                    <a href="pricing-booking.html" class="text-indigo-600 font-bold hover:underline">Pick Keywords
+                        -></a>
+                    <div class="border-t border-slate-200 dark:border-slate-800 pt-4 mt-6">
+                        <button
+                            class="accordion-trigger flex items-center justify-between w-full text-left font-bold text-slate-700 dark:text-white">
+                            <span>Keyword Bidding</span> <i data-lucide="plus" class="w-5 h-5 text-indigo-600"></i>
+                        </button>
+                        <div class="accordion-content hidden mt-4 text-sm text-slate-700">
+                            Pay per click (PPC) model for high intent keywords.
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-1"> <img src="Assets/56.jpeg"
+                        class="rounded-3xl shadow-xl opacity-0 animate-on-scroll saas-hover-image stagger-2">
+                </div>
+            </div>
+
+            <!-- 7. Category-Top Placement -->
+            <div class="flex flex-col md:flex-row items-center gap-12 group">
+                <div class="flex-1">
+                    <div
+                        class="w-16 h-16 bg-orange-100 text-orange-600 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="arrow-up-circle" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-3xl font-black dark:text-white mb-4">7. Category-Top Placement</h3>
+                    <p class="text-lg text-slate-600 dark:text-slate-200 mb-6">Own the header of the "Electronics" or
+                        "Fashion" page.</p>
+                    <a href="pricing-booking.html" class="text-indigo-600 font-bold hover:underline">Secure Spot -></a>
+                    <div class="border-t border-slate-200 dark:border-slate-800 pt-4 mt-6">
+                        <button
+                            class="accordion-trigger flex items-center justify-between w-full text-left font-bold text-slate-700 dark:text-white">
+                            <span>Monthly Tenancy</span> <i data-lucide="plus" class="w-5 h-5 text-indigo-600"></i>
+                        </button>
+                        <div class="accordion-content hidden mt-4 text-sm text-slate-700">
+                            Exclusive 100% Share of Voice (SOV) options available.
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-1"> <img src="Assets/57.jpeg"
+                        class="rounded-3xl shadow-xl opacity-0 animate-on-scroll saas-hover-image stagger-1">
+                </div>
+            </div>
+
+            <!-- 8. Urgent Sale Highlighting -->
+            <div class="flex flex-col md:flex-row-reverse items-center gap-12 group">
+                <div class="flex-1">
+                    <div class="w-16 h-16 bg-red-50 text-red-500 rounded-2xl flex items-center justify-center mb-6"> <i
+                            data-lucide="flame" class="w-8 h-8"></i> </div>
+                    <h3 class="text-3xl font-black dark:text-white mb-4">8. Urgent Sale Highlighting</h3>
+                    <p class="text-lg text-slate-600 dark:text-slate-200 mb-6">Red "URGENT" border and flame icon for
+                        quick liquidation.</p>
+                    <a href="pricing-booking.html" class="text-indigo-600 font-bold hover:underline">Mark Urgent -></a>
+                    <div class="border-t border-slate-200 dark:border-slate-800 pt-4 mt-6">
+                        <button
+                            class="accordion-trigger flex items-center justify-between w-full text-left font-bold text-slate-700 dark:text-white">
+                            <span>Impact</span> <i data-lucide="plus" class="w-5 h-5 text-indigo-600"></i>
+                        </button>
+                        <div class="accordion-content hidden mt-4 text-sm text-slate-700">
+                            Sells 3x faster on average. Ideal for moving sales.
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-1"> <img src="Assets/58.jpeg"
+                        class="rounded-3xl shadow-xl opacity-0 animate-on-scroll saas-hover-image stagger-2">
+                </div>
+            </div>
+
+            <!-- 9. Dealer & Agency Profiles -->
+            <div class="flex flex-col md:flex-row items-center gap-12 group">
+                <div class="flex-1">
+                    <div class="w-16 h-16 bg-slate-800 text-white rounded-2xl flex items-center justify-center mb-6"> <i
+                            data-lucide="briefcase" class="w-8 h-8"></i> </div>
+                    <h3 class="text-3xl font-black dark:text-white mb-4">9. Dealer & Agency Profiles</h3>
+                    <p class="text-lg text-slate-600 dark:text-slate-200 mb-6">Bulk management tools for car dealers and
+                        real estate agencies.</p>
+                    <a href="pricing-booking.html" class="text-indigo-600 font-bold hover:underline">Join as Agency
+                        -></a>
+                    <div class="border-t border-slate-200 dark:border-slate-800 pt-4 mt-6">
+                        <button
+                            class="accordion-trigger flex items-center justify-between w-full text-left font-bold text-slate-700 dark:text-white">
+                            <span>XML Feed Import</span> <i data-lucide="plus" class="w-5 h-5 text-indigo-600"></i>
+                        </button>
+                        <div class="accordion-content hidden mt-4 text-sm text-slate-700">
+                            Sync your inventory automatically via API or XML feed.
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-1"> <img src="Assets/59.jpeg"
+                        class="rounded-3xl shadow-xl opacity-0 animate-on-scroll saas-hover-image stagger-1">
+                </div>
+            </div>
+
+            <!-- 10. Event & Promotion Ads -->
+            <div class="flex col md:flex-row-reverse items-center gap-12 group">
+                <div class="flex-1">
+                    <div class="w-16 h-16 bg-pink-100 text-pink-600 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="calendar" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-3xl font-black dark:text-white mb-4">10. Event & Promotion Ads</h3>
+                    <p class="text-lg text-slate-600 dark:text-slate-200 mb-6">Promote your garage sale, concert, or
+                        store opening.</p>
+                    <a href="pricing-booking.html" class="text-indigo-600 font-bold hover:underline">Promote Event
+                        -></a>
+                    <div class="border-t border-slate-200 dark:border-slate-800 pt-4 mt-6">
+                        <button
+                            class="accordion-trigger flex items-center justify-between w-full text-left font-bold text-slate-700 dark:text-white">
+                            <span>Date Highlighting</span> <i data-lucide="plus" class="w-5 h-5 text-indigo-600"></i>
+                        </button>
+                        <div class="accordion-content hidden mt-4 text-sm text-slate-700">
+                            Countdown timers added to your ad.
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-1"> <img src="Assets/60.jpeg"
+                        class="rounded-3xl shadow-xl opacity-0 animate-on-scroll saas-hover-image stagger-2">
+                </div>
+            </div>
+
+            <!-- 11. Job & Recruitment Ads -->
+            <div class="flex flex-col md:flex-row items-center gap-12 group">
+                <div class="flex-1">
+                    <div
+                        class="w-16 h-16 bg-green-100 text-green-600 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="users" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-3xl font-black dark:text-white mb-4">11. Job & Recruitment Ads</h3>
+                    <p class="text-lg text-slate-600 dark:text-slate-200 mb-6">Find talent fast. CV collection built-in.
+                    </p>
+                    <a href="pricing-booking.html" class="text-indigo-600 font-bold hover:underline">Post Job -></a>
+                </div>
+                <div class="flex-1"> <img src="Assets/15.jpeg"
+                        class="rounded-3xl shadow-xl opacity-0 animate-on-scroll saas-hover-image stagger-1">
+                </div>
+            </div>
+
+            <!-- 12. Real Estate Priority -->
+            <div class="flex flex-col md:flex-row-reverse items-center gap-12 group">
+                <div class="flex-1">
+                    <div class="w-16 h-16 bg-cyan-100 text-cyan-600 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="home" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-3xl font-black dark:text-white mb-4">12. Real Estate Priority</h3>
+                    <p class="text-lg text-slate-600 dark:text-slate-200 mb-6">Larger photo galleries and virtual tour
+                        embedding.</p>
+                    <a href="pricing-booking.html" class="text-indigo-600 font-bold hover:underline">List Property
+                        -></a>
+                </div>
+                <div class="flex-1"> <img src="Assets/16.jpeg"
+                        class="rounded-3xl shadow-xl opacity-0 animate-on-scroll saas-hover-image stagger-2">
+                </div>
+            </div>
+
+            <!-- 13. Vehicle Showcase -->
+            <div class="flex flex-col md:flex-row items-center gap-12 group">
+                <div class="flex-1">
+                    <div class="w-16 h-16 bg-zinc-100 text-zinc-800 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="car" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-3xl font-black dark:text-white mb-4">13. Vehicle Showcase</h3>
+                    <p class="text-lg text-slate-600 dark:text-slate-200 mb-6">Detailed spec sheets (Mileage, VIN,
+                        Condition) pre-formatted.</p>
+                </div>
+                <div class="flex-1"> <img src="Assets/17.jpeg"
+                        class="rounded-3xl shadow-xl opacity-0 animate-on-scroll saas-hover-image stagger-1">
+                </div>
+            </div>
+
+            <!-- 14. AI Ad Optimization -->
+            <div class="flex flex-col md:flex-row-reverse items-center gap-12 group">
+                <div class="flex-1">
+                    <div
+                        class="w-16 h-16 bg-violet-100 text-violet-600 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="cpu" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-3xl font-black dark:text-white mb-4">14. AI Ad Optimization</h3>
+                    <p class="text-lg text-slate-600 dark:text-slate-200 mb-6">One-click title and description
+                        improvement using Gemini AI.</p>
+                </div>
+                <div class="flex-1"> <img src="Assets/18.jpeg"
+                        class="rounded-3xl shadow-xl opacity-0 animate-on-scroll saas-hover-image stagger-2">
+                </div>
+            </div>
+
+            <!-- 15. Fraud Protection -->
+            <div class="flex flex-col md:flex-row items-center gap-12 group">
+                <div class="flex-1">
+                    <div class="w-16 h-16 bg-green-50 text-green-600 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="shield-check" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-3xl font-black dark:text-white mb-4">15. Fraud Protection</h3>
+                    <p class="text-lg text-slate-600 dark:text-slate-200 mb-6">Automated scam filtering and secure chat
+                        relays.</p>
+                </div>
+                <div class="flex-1"> <img src="Assets/19.jpeg"
+                        class="rounded-3xl shadow-xl opacity-0 animate-on-scroll saas-hover-image stagger-1">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 3. Pricing Section (Glassmorphism) -->
+    <div class="py-24 bg-[url('Assets/20.jpeg')] bg-cover bg-fixed relative">
+        <div class="absolute inset-0 bg-slate-900/80 backdrop-blur-sm"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4">
+            <h2 class="text-5xl font-black text-center text-white font-outfit mb-16">SIMPLE <span
+                    class="text-indigo-400">PRICING</span></h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                <!-- Starter -->
+                <div class="glass-card-strong p-10 rounded-[3rem] text-white animate-zoom-in">
+                    <div class="font-bold text-sm bg-white/20 inline-block px-3 py-1 rounded-full mb-4">STARTER</div>
+                    <h3 class="text-5xl font-black mb-4">$0</h3>
+                    <p class="mb-8 opacity-80">Ideal for first-timers.</p>
+                    <ul class="space-y-4 mb-8 font-medium">
+                        <li><i data-lucide="check" class="inline w-4 h-4 mr-2"></i> 10 Free Ads</li>
+                        <li><i data-lucide="check" class="inline w-4 h-4 mr-2"></i> Standard Support</li>
+                    </ul>
+                    <a href="pricing-booking.html"
+                        class="block text-center w-full py-4 bg-white/10 hover:bg-white/20 rounded-2xl font-bold transition-all">Get
+                        Started</a>
+                </div>
+
+                <!-- Most Popular -->
+                <div
+                    class="glass-card-strong p-12 rounded-[3rem] text-white transform scale-110 border-indigo-400 border-2 shadow-[0_0_50px_rgba(99,102,241,0.5)] relative">
+                    <div
+                        class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-indigo-500 text-white px-4 py-1 rounded-full font-bold text-sm shadow-lg">
+                        MOST POPULAR</div>
+                    <h3 class="text-6xl font-black mb-4">$29</h3>
+                    <p class="mb-8 opacity-80">Power Seller Toolkit.</p>
+                    <ul class="space-y-4 mb-8 font-bold">
+                        <li><i data-lucide="check" class="inline w-4 h-4 mr-2 text-indigo-300"></i> Unlimited Ads</li>
+                        <li><i data-lucide="check" class="inline w-4 h-4 mr-2 text-indigo-300"></i> 5x Boost Credits
+                        </li>
+                        <li><i data-lucide="check" class="inline w-4 h-4 mr-2 text-indigo-300"></i> Verified Badge</li>
+                    </ul>
+                    <a href="pricing-booking.html"
+                        class="block text-center w-full py-4 bg-indigo-600 hover:bg-indigo-500 rounded-2xl font-bold transition-all shadow-xl">Go
+                        Pro</a>
+                </div>
+
+                <!-- Business -->
+                <div class="glass-card-strong p-10 rounded-[3rem] text-white animate-zoom-in delay-200">
+                    <div class="font-bold text-sm bg-white/20 inline-block px-3 py-1 rounded-full mb-4">BUSINESS</div>
+                    <h3 class="text-5xl font-black mb-4">$99</h3>
+                    <p class="mb-8 opacity-80">High volume agency.</p>
+                    <ul class="space-y-4 mb-8 font-medium">
+                        <li><i data-lucide="check" class="inline w-4 h-4 mr-2"></i> API Access</li>
+                        <li><i data-lucide="check" class="inline w-4 h-4 mr-2"></i> XML Feeds</li>
+                    </ul>
+                    <a href="pricing-booking.html"
+                        class="block text-center w-full py-4 bg-white/10 hover:bg-white/20 rounded-2xl font-bold transition-all">Contact
+                        Sales</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. Trust & Performance -->
+    <div class="py-24 bg-white dark:bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center gap-16">
+            <div class="flex-1">
+                <h2 class="text-4xl font-black text-slate-900 dark:text-white font-outfit mb-8">BUILT FOR <span
+                        class="text-indigo-600">SPEED</span> AND TRUST.</h2>
+                <div class="grid grid-cols-2 gap-8">
+                    <div class="p-6 bg-slate-50 dark:bg-slate-900 rounded-2xl">
+                        <h4 class="text-4xl font-black text-indigo-600 mb-2">99.9%</h4>
+                        <p class="font-bold text-slate-700">Uptime Guarantee</p>
+                    </div>
+                    <div class="p-6 bg-slate-50 dark:bg-slate-900 rounded-2xl">
+                        <h4 class="text-4xl font-black text-indigo-600 mb-2">0.01s</h4>
+                        <p class="font-bold text-slate-700">Search Latency</p>
+                    </div>
+                    <div class="p-6 bg-slate-50 dark:bg-slate-900 rounded-2xl">
+                        <h4 class="text-4xl font-black text-indigo-600 mb-2">24/7</h4>
+                        <p class="font-bold text-slate-700">Moderation</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-1 relative">
+                <div class="absolute inset-0 bg-indigo-500/10 blur-[80px]"></div>
+                <img src="Assets/21.jpeg" class="relative rounded-[3rem] shadow-2xl animate-float">
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. Final CTA -->
+    <div class="py-20 mx-4">
+        <div
+            class="max-w-7xl mx-auto bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 rounded-[3rem] p-12 md:p-24 text-center text-white relative overflow-hidden shadow-2xl animate-gradient-xy">
+            <div class="relative z-10">
+                <h2 class="text-4xl md:text-6xl font-black mb-8 animate-pulse-slow">Start Advertising Where Buyers Are
+                    Already Searching</h2>
+                <div class="flex flex-col sm:flex-row justify-center gap-6">
+                    <a href="pricing-booking.html"
+                        class="px-10 py-4 bg-white text-indigo-600 font-bold rounded-full hover:scale-105 transition-transform shadow-xl">Post
+                        Your Ad</a>
+                    <a href="pricing-booking.html"
+                        class="px-10 py-4 bg-indigo-900/40 backdrop-blur border border-white/30 text-white font-bold rounded-full hover:bg-indigo-900/60 transition-all">View
+                        Pricing</a>
+                </div>
+            </div>
+            <!-- Floating Icons -->
+            <i data-lucide="star" class="absolute top-10 left-10 text-white/20 w-24 h-24 animate-float"></i>
+            <i data-lucide="heart"
+                class="absolute bottom-10 right-10 text-white/20 w-32 h-32 animate-float delay-500"></i>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-gradient text-slate-300 pt-16 pb-8 border-t border-slate-700/50 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-10">
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+
+                <!-- Brand -->
+                <div class="space-y-6 animate-fade-in-up brand-glow cursor-default">
+                    <div class="flex items-center gap-3">
+                        <div class="logo-bg bg-indigo-600 p-3 rounded-xl transition-all duration-300">
+                            <span class="text-white font-black text-2xl">C</span>
+                        </div>
+                        <span class="text-2xl font-black text-white tracking-tight">ClassifiedPro</span>
+                    </div>
+                    <p class="text-white text-sm leading-relaxed max-w-xs">
+                        The world’s most modern classified ads platform. Sell your items, find services, and connect
+                        with your community.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="animate-fade-in-up delay-200">
+                    <h4 class="text-white font-bold mb-6 text-lg relative inline-block">Quick Links <div
+                            class="absolute -bottom-2 left-0 w-1/2 h-1 bg-indigo-500 rounded-full"></div>
+                    </h4>
+                    <ul class="space-y-3 text-sm font-medium">
+                        <li><a href="index.html" class="footer-link block">Home Page</a></li>
+                        <li><a href="about.html" class="footer-link block">About Us</a></li>
+                        <li><a href="services.html" class="footer-link block">Our Services</a></li>
+                        <li><a href="contact.html" class="footer-link block">Contact Support</a></li>
+                    </ul>
+                </div>
+
+                <!-- Account -->
+                <div class="animate-fade-in-up delay-400">
+                    <h4 class="text-white font-bold mb-6 text-lg relative inline-block">Account <div
+                            class="absolute -bottom-2 left-0 w-1/2 h-1 bg-indigo-500 rounded-full"></div>
+                    </h4>
+                    <ul class="space-y-3 text-sm font-medium">
+                        <li><a href="user_dashboard.html" class="footer-link block group flex items-center gap-2"><i
+                                    data-lucide="layout-dashboard"
+                                    class="w-4 h-4 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all"></i>
+                                User Dashboard</a></li>
+                        <li><a href="admin_dashboard.html" class="footer-link block group flex items-center gap-2"><i
+                                    data-lucide="shield"
+                                    class="w-4 h-4 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all"></i>
+                                Admin Dashboard</a></li>
+                        <li><a href="login.html" class="footer-link block group flex items-center gap-2"><i
+                                    data-lucide="log-in"
+                                    class="w-4 h-4 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all"></i>
+                                Login / Sign Up</a></li>
+                        <li><a href="#" class="footer-link block group flex items-center gap-2"><i
+                                    data-lucide="file-text"
+                                    class="w-4 h-4 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all"></i>
+                                Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="animate-fade-in-up delay-600">
+                    <h4 class="text-white font-bold mb-6 text-lg relative inline-block">Newsletter <div
+                            class="absolute -bottom-2 left-0 w-1/2 h-1 bg-indigo-500 rounded-full"></div>
+                    </h4>
+                    <p class="text-white text-sm mb-4">Stay updated with the latest ads.</p>
+                    <div class="relative group">
+                        <input type="email" placeholder="Email address"
+                            class="bg-slate-800/50 border border-slate-700 text-white text-sm rounded-xl w-full pl-4 pr-16 rtl:pl-16 rtl:pr-4 py-3 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all placeholder-slate-500 group-hover:bg-slate-800">
+                        <button
+                            class="absolute right-1 rtl:right-auto rtl:left-1 top-1 bottom-1 bg-indigo-600 text-white px-4 rounded-lg font-bold hover:bg-indigo-500 transition-all hover:scale-105 active:scale-95 shadow-lg">Go</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div
+                class="border-t border-slate-800/50 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-semibold text-slate-400 animate-fade-in-up delay-600">
+                <p>© 2026 ClassifiedPro Inc. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="social-icon transition-all duration-300"><i data-lucide="facebook"
+                            class="w-5 h-5"></i></a>
+                    <a href="#" class="social-icon transition-all duration-300"><i data-lucide="twitter"
+                            class="w-5 h-5"></i></a>
+                    <a href="#" class="social-icon transition-all duration-300"><i data-lucide="instagram"
+                            class="w-5 h-5"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="rtltoggle.js"></script>
+</body>
+
+</html>
