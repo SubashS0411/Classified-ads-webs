@@ -203,26 +203,7 @@ a {
   color: #ffffff !important;
 }
 
-/* Footer Exception SPECIFIC: Quick Links (2nd child) and Account (3rd child) follow Theme */
-.footer-gradient .grid>div:nth-child(2) h4,
-.footer-gradient .grid>div:nth-child(2) a,
-.footer-gradient .grid>div:nth-child(2) li,
-.footer-gradient .grid>div:nth-child(3) h4,
-.footer-gradient .grid>div:nth-child(3) a,
-.footer-gradient .grid>div:nth-child(3) li {
-  color: #000000 !important;
-  /* Light Mode = Black */
-}
-
-.dark .footer-gradient .grid>div:nth-child(2) h4,
-.dark .footer-gradient .grid>div:nth-child(2) a,
-.dark .footer-gradient .grid>div:nth-child(2) li,
-.dark .footer-gradient .grid>div:nth-child(3) h4,
-.dark .footer-gradient .grid>div:nth-child(3) a,
-.dark .footer-gradient .grid>div:nth-child(3) li {
-  color: #ffffff !important;
-  /* Dark Mode = White */
-}
+/* Footer Global Enforcement: Removed specific light/dark overrides to ensure consistent dark footer */
 
 h1,
 h2,
