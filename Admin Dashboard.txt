@@ -1,0 +1,52 @@
+Admin Dashboard
+ Prompt: Create NextGen Admin Dashboard
+Please generate a responsive, data-heavy Admin Dashboard for a web application using HTML5, Tailwind CSS, and Vanilla JavaScript. The design should focus on data visualization and management.
+
+1. Page Layout
+Global Header: Same as User Dashboard but with "Admin Control" active.
+Sidebar:
+Desktop: Fixed left sidebar.
+Mobile: Overlay sidebar.
+Menu: Overview, Users, Listings, Analytics, Settings.
+Logout: Prominent logout button.
+Main Content:
+Padding: Large (p-8).
+Layout: Grid-based for widgets.
+2. Admin Widgets (Overview)
+Header: "Admin Overview" title + Refresh & Export buttons.
+Charts Grid (11 Charts):
+Implement a dense grid of charts using ApexCharts.
+Types:
+Line Chart (Revenue)
+Stacked Bar (Category Sales)
+Area Chart (Traffic Growth)
+Multi-Line (User vs Seller)
+Heatmap (Activity)
+Funnel (Conversion)
+Scatter (Price vs Demand)
+Horizontal Bar (Top Categories)
+Gauge (System Health)
+Radar (Platform Metrics)
+Pie (Device Distribution)
+Styling: All charts should be inside card-hover containers with skeleton loading states.
+3. Management Views (Hidden by default)
+Users View:
+Data Table: User, Status (Active/Pending), Joined Date, Actions.
+Row Hover effects.
+Listings View:
+Moderation Grid: Cards showing "reported" items.
+Actions: Ban, Ignore.
+Settings View:
+Form to change Site Name.
+Maintenance Mode toggle switch.
+4. Javascript Features
+Sidebar Logic: Toggle functionality for mobile.
+View Navigation: Single-page application feel (hide/show sections based on Sidebar click).
+Chart Management:
+Initialize all 11 ApexCharts instance.
+Simulate data loading with Skeleton loaders (fade out skeleton, fade in chart after delay).
+Theme/RTL: Full support.
+5. Styling Specs
+Dashboard Cards: rounded-3xl, shadow-sm, hover:shadow-lg.
+Skeleton Loader: Animated shimmer effect for chart placeholders.
+Colors: Professional Slate/Indigo palette.
