@@ -126,7 +126,7 @@
                             C</div>
                         <span
                             class="text-2xl font-black tracking-tighter dark:text-white hidden sm:block">Classified<span
-                                class="text-indigo-600">Pro</span></span>
+                                class="text-blue-900">Pro</span></span>
                     </a>
 
                     <!-- Desktop Menu -->
@@ -267,37 +267,40 @@
                     </button>
                 </div>
                 <nav class="flex-1 space-y-1 mt-0">
-                    <a href="#" id="sidebar-overview"
+                    <div
+                        class="mx-3 mt-2 mb-1 px-3 py-1 bg-blue-600 text-white text-xs font-bold rounded w-fit uppercase tracking-wider">
+                        USER</div>
+                    <a href="#view-overview" id="nav-overview"
                         class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-xl bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-500/20">
                         <i data-lucide="layout-dashboard" class="w-5 h-5"></i>
                         <span class="font-medium">Overview</span>
                     </a>
-                    <a href="#" id="sidebar-listings"
+                    <a href="#view-listings" id="nav-listings"
                         class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/50 hover:text-slate-900 dark:hover:text-white transition-colors">
                         <i data-lucide="package" class="w-5 h-5"></i>
                         <span>My Listings</span>
                     </a>
-                    <a href="#" id="sidebar-messages"
+                    <a href="#view-messages" id="nav-messages"
                         class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/50 hover:text-slate-900 dark:hover:text-white transition-colors">
                         <i data-lucide="message-square" class="w-5 h-5"></i>
                         <span>Messages</span>
                     </a>
-                    <a href="#" id="sidebar-favorites"
+                    <a href="#view-favorites" id="nav-favorites"
                         class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/50 hover:text-slate-900 dark:hover:text-white transition-colors">
                         <i data-lucide="heart" class="w-5 h-5"></i>
                         <span>Favorites</span>
                     </a>
-                    <a href="#" id="sidebar-wallet"
+                    <a href="#view-wallet" id="nav-wallet"
                         class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/50 hover:text-slate-900 dark:hover:text-white transition-colors">
                         <i data-lucide="wallet" class="w-5 h-5"></i>
                         <span>Wallet</span>
                     </a>
-                    <a href="#" id="sidebar-profile"
+                    <a href="#view-profile" id="nav-profile"
                         class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/50 hover:text-slate-900 dark:hover:text-white transition-colors">
                         <i data-lucide="user" class="w-5 h-5"></i>
                         <span>Profile</span>
                     </a>
-                    <a href="#" id="sidebar-settings"
+                    <a href="#view-settings" id="nav-settings"
                         class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/50 hover:text-slate-900 dark:hover:text-white transition-colors">
                         <i data-lucide="settings" class="w-5 h-5"></i>
                         <span>Settings</span>
@@ -335,7 +338,8 @@
                 </span>
             </button>
 
-            <div id="view-overview" class="dashboard-view p-4 lg:p-8 max-w-7xl mx-auto space-y-6 animate-fade-in-up">
+            <div id="view-overview"
+                class="dashboard-view p-4 lg:p-8 max-w-7xl mx-auto space-y-6 animate-fade-in-up scroll-mt-24">
                 <!-- Header -->
                 <div>
                     <h1 class="text-2xl lg:text-3xl font-bold text-slate-900 dark:text-white mb-2">My Dashboard 🚀</h1>
@@ -754,7 +758,7 @@
             </div>
             <!-- View: My Listings -->
             <div id="view-listings"
-                class="dashboard-view hidden p-4 lg:p-8 max-w-7xl mx-auto space-y-6 animate-fade-in-up">
+                class="dashboard-view p-4 lg:p-8 max-w-7xl mx-auto space-y-6 animate-fade-in-up scroll-mt-24">
                 <div class="flex justify-between items-center mb-6">
                     <div>
                         <h2 class="text-2xl font-bold text-slate-900 dark:text-white">My Listings</h2>
@@ -810,59 +814,9 @@
                 </div>
             </div>
 
-            <!-- View: Favorites -->
-            <div id="view-favorites"
-                class="dashboard-view hidden p-4 lg:p-8 max-w-7xl mx-auto space-y-6 animate-fade-in-up">
-                <div class="flex justify-between items-center mb-6">
-                    <div>
-                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Saved Favorites</h2>
-                        <p class="text-slate-500 dark:text-slate-400">Items you're watching.</p>
-                    </div>
-                </div>
-                <!-- Favorites Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Favorite Card 1 -->
-                    <div
-                        class="dashboard-card rounded-2xl overflow-hidden group border-indigo-200 dark:border-indigo-500/30">
-                        <div class="relative aspect-video">
-                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80"
-                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <button
-                                class="absolute top-2 right-2 p-2 bg-white/30 backdrop-blur-md rounded-full text-rose-500 hover:scale-110 transition-transform"><i
-                                    data-lucide="heart" class="w-4 h-4 fill-current"></i></button>
-                        </div>
-                        <div class="p-4">
-                            <h3 class="text-slate-900 dark:text-white font-bold text-lg mb-1">Luxury Villa in Bali</h3>
-                            <p class="text-indigo-600 dark:text-indigo-400 font-bold mb-3">$1,250,000</p>
-                            <button
-                                class="w-full py-2 rounded-lg bg-indigo-600 text-white text-sm font-bold hover:bg-indigo-700 transition-colors">Contact
-                                Seller</button>
-                        </div>
-                    </div>
-                    <!-- Favorite Card 2 -->
-                    <div
-                        class="dashboard-card rounded-2xl overflow-hidden group border-indigo-200 dark:border-indigo-500/30">
-                        <div class="relative aspect-video">
-                            <img src="https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=800&q=80"
-                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <button
-                                class="absolute top-2 right-2 p-2 bg-white/30 backdrop-blur-md rounded-full text-rose-500 hover:scale-110 transition-transform"><i
-                                    data-lucide="heart" class="w-4 h-4 fill-current"></i></button>
-                        </div>
-                        <div class="p-4">
-                            <h3 class="text-slate-900 dark:text-white font-bold text-lg mb-1">Vintage Rolex Watch</h3>
-                            <p class="text-indigo-600 dark:text-indigo-400 font-bold mb-3">$12,500</p>
-                            <button
-                                class="w-full py-2 rounded-lg bg-indigo-600 text-white text-sm font-bold hover:bg-indigo-700 transition-colors">Contact
-                                Seller</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             <!-- View: Messages -->
             <div id="view-messages"
-                class="dashboard-view hidden p-4 lg:p-8 max-w-7xl mx-auto h-[calc(100vh-140px)] animate-fade-in-up">
+                class="dashboard-view p-4 lg:p-8 max-w-7xl mx-auto h-[calc(100vh-140px)] animate-fade-in-up scroll-mt-24">
                 <div class="h-full dashboard-card rounded-2xl overflow-hidden flex flex-col md:flex-row">
                     <!-- Chat List -->
                     <div class="w-full md:w-80 border-r border-slate-200 dark:border-slate-700/50 flex flex-col">
@@ -931,9 +885,59 @@
                 </div>
             </div>
 
+            <!-- View: Favorites -->
+            <div id="view-favorites"
+                class="dashboard-view p-4 lg:p-8 max-w-7xl mx-auto space-y-6 animate-fade-in-up scroll-mt-24">
+                <div class="flex justify-between items-center mb-6">
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Saved Favorites</h2>
+                        <p class="text-slate-500 dark:text-slate-400">Items you're watching.</p>
+                    </div>
+                </div>
+                <!-- Favorites Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Favorite Card 1 -->
+                    <div
+                        class="dashboard-card rounded-2xl overflow-hidden group border-indigo-200 dark:border-indigo-500/30">
+                        <div class="relative aspect-video">
+                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <button
+                                class="absolute top-2 right-2 p-2 bg-white/30 backdrop-blur-md rounded-full text-rose-500 hover:scale-110 transition-transform"><i
+                                    data-lucide="heart" class="w-4 h-4 fill-current"></i></button>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-slate-900 dark:text-white font-bold text-lg mb-1">Luxury Villa in Bali</h3>
+                            <p class="text-indigo-600 dark:text-indigo-400 font-bold mb-3">$1,250,000</p>
+                            <button
+                                class="w-full py-2 rounded-lg bg-indigo-600 text-white text-sm font-bold hover:bg-indigo-700 transition-colors">Contact
+                                Seller</button>
+                        </div>
+                    </div>
+                    <!-- Favorite Card 2 -->
+                    <div
+                        class="dashboard-card rounded-2xl overflow-hidden group border-indigo-200 dark:border-indigo-500/30">
+                        <div class="relative aspect-video">
+                            <img src="https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=800&q=80"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <button
+                                class="absolute top-2 right-2 p-2 bg-white/30 backdrop-blur-md rounded-full text-rose-500 hover:scale-110 transition-transform"><i
+                                    data-lucide="heart" class="w-4 h-4 fill-current"></i></button>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-slate-900 dark:text-white font-bold text-lg mb-1">Vintage Rolex Watch</h3>
+                            <p class="text-indigo-600 dark:text-indigo-400 font-bold mb-3">$12,500</p>
+                            <button
+                                class="w-full py-2 rounded-lg bg-indigo-600 text-white text-sm font-bold hover:bg-indigo-700 transition-colors">Contact
+                                Seller</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- View: Wallet -->
             <div id="view-wallet"
-                class="dashboard-view hidden p-4 lg:p-8 max-w-7xl mx-auto space-y-6 animate-fade-in-up">
+                class="dashboard-view p-4 lg:p-8 max-w-7xl mx-auto space-y-6 animate-fade-in-up scroll-mt-24">
                 <div class="flex justify-between items-center mb-6">
                     <h2 class="text-2xl font-bold text-slate-900 dark:text-white">My Wallet</h2>
                 </div>
@@ -978,11 +982,11 @@
                 </div>
             </div>
 
-            <!-- View: Settings -->
-            <div id="view-settings"
-                class="dashboard-view hidden p-4 lg:p-8 max-w-7xl mx-auto space-y-6 animate-fade-in-up">
+            <!-- View: Profile -->
+            <div id="view-profile"
+                class="dashboard-view p-4 lg:p-8 max-w-7xl mx-auto space-y-6 animate-fade-in-up scroll-mt-24">
                 <div class="max-w-3xl">
-                    <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6">Account Settings</h2>
+                    <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6">My Profile</h2>
                     <div class="dashboard-card rounded-2xl p-6 space-y-6">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="space-y-2">
@@ -998,25 +1002,42 @@
                                     class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-2 text-slate-900 dark:text-white outline-none focus:ring-1 focus:ring-indigo-500">
                             </div>
                         </div>
-                        <div class="pt-6 border-t border-slate-700/50">
-                            <h3 class="text-white font-bold mb-4">Notifications</h3>
+                        <div class="pt-6 border-t border-slate-200 dark:border-slate-700/50 flex justify-end">
+                            <button
+                                class="bg-indigo-600 text-white px-6 py-2 rounded-xl font-bold hover:bg-indigo-700 transition-colors">Update
+                                Profile</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- View: Settings -->
+            <div id="view-settings"
+                class="dashboard-view p-4 lg:p-8 max-w-7xl mx-auto space-y-6 animate-fade-in-up scroll-mt-24">
+                <div class="max-w-3xl">
+                    <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6">Settings</h2>
+                    <div class="dashboard-card rounded-2xl p-6 space-y-6">
+                        <div>
+                            <h3 class="text-slate-900 dark:text-white font-bold mb-4">Notifications</h3>
                             <div class="space-y-3">
                                 <label class="flex items-center gap-3 cursor-pointer">
                                     <input type="checkbox" checked
                                         class="w-4 h-4 rounded bg-slate-800 border-slate-600 text-indigo-600 focus:ring-indigo-500">
-                                    <span class="text-sm text-slate-300">Email digest of new listings</span>
+                                    <span class="text-sm text-slate-600 dark:text-slate-300">Email digest of new
+                                        listings</span>
                                 </label>
                                 <label class="flex items-center gap-3 cursor-pointer">
                                     <input type="checkbox" checked
                                         class="w-4 h-4 rounded bg-slate-800 border-slate-600 text-indigo-600 focus:ring-indigo-500">
-                                    <span class="text-sm text-slate-300">Browser notifications</span>
+                                    <span class="text-sm text-slate-600 dark:text-slate-300">Browser
+                                        notifications</span>
                                 </label>
                             </div>
                         </div>
-                        <div class="pt-6 border-t border-slate-700/50 flex justify-end">
+                        <div class="pt-6 border-t border-slate-200 dark:border-slate-700/50 flex justify-end">
                             <button
                                 class="bg-indigo-600 text-white px-6 py-2 rounded-xl font-bold hover:bg-indigo-700 transition-colors">Save
-                                Changes</button>
+                                Preferences</button>
                         </div>
                     </div>
                 </div>
@@ -1205,49 +1226,92 @@
         if (btnLogoutHeaderNav) btnLogoutHeaderNav.addEventListener('click', handleLogout);
 
         // Sidebar Navigation Logic (SPA)
+        // Scroll Spy & Single Page Navigation Logic
         const sidebarLinks = document.querySelectorAll('.sidebar-link');
-        const views = document.querySelectorAll('.dashboard-view');
-        // Define classes cleanly
+        const sections = document.querySelectorAll('.dashboard-view');
+
+        // Classes
         const activeClasses = ['bg-indigo-500/10', 'text-indigo-400', 'border', 'border-indigo-500/20'];
         const inactiveClasses = ['text-slate-400', 'hover:bg-slate-800/50', 'hover:text-white'];
-        // Remove specific utility classes from inactive/active lists to avoid partial removal issues if using classList.remove(...) with spread
-        // Instead, we will manually toggle.
 
+        // Helper to update UI
+        function updateSidebarUI(targetId) {
+            sidebarLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                // Check if href matches #targetId
+                if (href === `#${targetId}`) {
+                    link.classList.remove(...inactiveClasses);
+                    link.classList.add(...activeClasses);
+                    // Also scroll sidebar if needed (optional but nice)
+                    // link.scrollIntoView({ block: 'nearest', inline: 'nearest' }); 
+                } else {
+                    link.classList.remove(...activeClasses);
+                    link.classList.add(...inactiveClasses);
+                }
+            });
+        }
+
+        // 1. Intersection Observer for Scroll Spy
+        const observerOptions = {
+            root: null,
+            // Trigger when 40% of the target is visible or close to center
+            // Adjust rootMargin to make the active switch happen "nicely" as you scroll
+            rootMargin: '-20% 0px -60% 0px',
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    updateSidebarUI(entry.target.id);
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => observer.observe(section));
+
+        // 2. Click Handling for Smooth Scroll
         sidebarLinks.forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
-                const targetId = link.id.replace('sidebar-', 'view-'); // e.g. sidebar-overview -> view-overview
+                const targetId = link.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
 
-                // 1. Switch Active Link State
-                sidebarLinks.forEach(l => {
-                    if (l === link) {
-                        l.classList.remove('text-slate-400', 'hover:bg-slate-800/50', 'hover:text-white');
-                        l.classList.add('bg-indigo-500/10', 'text-indigo-400', 'border', 'border-indigo-500/20');
-                    } else {
-                        l.classList.remove('bg-indigo-500/10', 'text-indigo-400', 'border', 'border-indigo-500/20');
-                        l.classList.add('text-slate-400', 'hover:bg-slate-800/50', 'hover:text-white');
+                if (targetSection) {
+                    // Smooth Scroll
+                    window.scrollTo({
+                        top: targetSection.offsetTop - 100, // Offset for sticky header (approx 80px + padding)
+                        behavior: 'smooth'
+                    });
+
+                    // Close Mobile Sidebar if open
+                    if (window.innerWidth < 1024) {
+                        const sidebar = document.getElementById('sidebar');
+                        const overlay = document.getElementById('sidebarOverlay');
+
+                        if (sidebar) {
+                            sidebar.classList.remove('translate-x-0');
+                            sidebar.classList.add('-translate-x-full', 'rtl:translate-x-full');
+                        }
+                        if (overlay) {
+                            overlay.classList.add('hidden', 'opacity-0');
+                            overlay.classList.remove('opacity-100');
+                        }
+                        document.body.classList.remove('overflow-hidden');
                     }
-                });
-
-
-                // 2. Switch Visible Content View
-                views.forEach(view => {
-                    if (view.id === targetId) {
-                        view.classList.remove('hidden');
-                        view.classList.remove('animate-fade-in-up');
-                        void view.offsetWidth; // trigger reflow
-                        view.classList.add('animate-fade-in-up');
-                    } else {
-                        view.classList.add('hidden');
-                    }
-                });
-
-                // 3. Close Mobile Sidebar if open
-                if (window.innerWidth < 1024) {
-                    toggleSidebar(true); // Force close
                 }
             });
         });
+
+        // 3. Default to Overview on Load if no hash
+        if (!window.location.hash) {
+            // updateSidebarUI('view-overview'); // Observer will likely catch this anyway
+            // Scroll to top to be safe
+            window.scrollTo({ top: 0, behavior: 'auto' });
+        } else {
+            // If there IS a hash, browser handles jump, but we might want to smooth it? 
+            // Browser default behavior is fine for initial load.
+        }
 
         // Initialize Lucide Icons
         lucide.createIcons();

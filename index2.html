@@ -56,7 +56,7 @@
                             C</div>
                         <span
                             class="text-2xl font-bold tracking-tighter text-slate-900 dark:text-white hidden sm:block whitespace-nowrap">Classified<span
-                                class="text-slate-400">Pro</span></span>
+                                class="text-blue-900">Pro</span></span>
                     </a>
 
                     <!-- Desktop Menu -->
@@ -223,12 +223,9 @@
             </p>
             <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
                 <button
-                    class="group relative px-10 py-5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-full font-bold overflow-hidden shadow-2xl transition-transform hover:scale-105 active:scale-95">
+                    class="group px-10 py-5 bg-white/50 dark:bg-slate-800/50 backdrop-blur-md text-slate-700 dark:text-slate-200 font-bold rounded-full border border-slate-200 dark:border-slate-700 hover:bg-white dark:hover:bg-slate-800 transition-all hover:shadow-lg">
                     <span class="relative z-10 flex items-center gap-2">Start Exploring <i data-lucide="arrow-right"
                             class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i></span>
-                    <div
-                        class="absolute inset-0 bg-indigo-600 dark:bg-slate-200 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
-                    </div>
                 </button>
                 <button
                     class="px-10 py-5 bg-white/50 dark:bg-slate-800/50 backdrop-blur-md text-slate-700 dark:text-slate-200 font-bold rounded-full border border-slate-200 dark:border-slate-700 hover:bg-white dark:hover:bg-slate-800 transition-all hover:shadow-lg">
@@ -288,7 +285,7 @@
                 </h2>
                 <div class="space-y-6 text-lg text-slate-600 dark:text-slate-300 font-light leading-relaxed">
                     <p>
-                        In a world of noise, we seek the quiet. ClassifiedPro isn’t just a marketplace; it’s a
+                        ClassifiedPro isn’t just a marketplace; it’s a
                         collection of stories, a gallery of intentional objects that bring joy and utility to your life.
                     </p>
                     <p>
@@ -377,56 +374,85 @@
         </div>
     </section>
 
-    <!-- Features / Benefits Scroll Section -->
-    <section class="py-24 bg-slate-50 dark:bg-slate-900/40 relative overflow-hidden">
+    <!-- Features / Benefits Scroll Section (Refined List) -->
+    <section class="py-12 bg-slate-50 dark:bg-slate-900/40 relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div class="space-y-12">
-                    <div class="flex gap-6 animate-on-scroll opacity-0 translate-y-8 transition-all duration-700">
-                        <div
-                            class="w-16 h-16 rounded-2xl bg-white dark:bg-slate-800 shadow-lg flex items-center justify-center text-indigo-600 flex-shrink-0">
-                            <i data-lucide="search-check" class="w-8 h-8"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-bold text-slate-800 dark:text-white mb-2">Smart Discovery</h3>
-                            <p class="text-slate-600 dark:text-slate-300 leading-relaxed">Our AI-powered search
-                                understands what you need, highlighting <span
-                                    class="bg-indigo-100 dark:bg-indigo-900/50 px-1 rounded text-indigo-700 dark:text-indigo-300">relevant
-                                    key features</span> instantly.</p>
-                        </div>
-                    </div>
-                    <div
-                        class="flex gap-6 animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-100">
-                        <div
-                            class="w-16 h-16 rounded-2xl bg-white dark:bg-slate-800 shadow-lg flex items-center justify-center text-teal-600 flex-shrink-0">
-                            <i data-lucide="shield-check" class="w-8 h-8"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-bold text-slate-800 dark:text-white mb-2">Verified Trust</h3>
-                            <p class="text-slate-600 dark:text-slate-300 leading-relaxed">Browse with confidence using
-                                our <span
-                                    class="bg-teal-100 dark:bg-teal-900/50 px-1 rounded text-teal-700 dark:text-teal-300">Triple-Check
-                                    Verification</span> system for sellers.</p>
-                        </div>
-                    </div>
-                    <div
-                        class="flex gap-6 animate-on-scroll opacity-0 translate-y-8 transition-all duration-700 delay-200">
-                        <div
-                            class="w-16 h-16 rounded-2xl bg-white dark:bg-slate-800 shadow-lg flex items-center justify-center text-purple-600 flex-shrink-0">
-                            <i data-lucide="zap" class="w-8 h-8"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-bold text-slate-800 dark:text-white mb-2">Instant Connect</h3>
-                            <p class="text-slate-600 dark:text-slate-300 leading-relaxed">Secure, real-time chat means
-                                you can close deals faster without sharing personal info.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="relative animate-on-scroll opacity-0 scale-95 transition-all duration-1000">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <!-- Left Column: Image (Tighter Fit) -->
+                <!-- Left Column: Image (Tighter Fit, Square) -->
+                <div
+                    class="relative animate-on-scroll opacity-0 scale-95 transition-all duration-1000 max-w-sm mx-auto lg:mr-auto lg:ml-0">
                     <img src="Assets/5.jpeg"
-                        class="rounded-[3rem] shadow-2xl relative z-10 w-full rotate-2 hover:rotate-0 transition-transform duration-500">
-                    <div class="absolute -top-10 -right-10 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl"></div>
-                    <div class="absolute -bottom-10 -left-10 w-64 h-64 bg-teal-500/10 rounded-full blur-3xl"></div>
+                        class="rounded-[2.5rem] shadow-xl relative z-10 w-full aspect-square object-cover rotate-2 hover:rotate-0 transition-transform duration-500">
+                    <!-- Reduced decorative blobs -->
+                    <div class="absolute -top-4 -right-4 w-32 h-32 bg-indigo-500/10 rounded-full blur-xl"></div>
+                    <div class="absolute -bottom-4 -left-4 w-32 h-32 bg-teal-500/10 rounded-full blur-xl"></div>
+                </div>
+
+                <!-- Right Column: Text Content -->
+                <div class="space-y-6">
+                    <h2
+                        class="text-3xl md:text-4xl font-serif italic text-slate-800 dark:text-white mb-2 drop-shadow-[0_0_15px_rgba(99,102,241,0.5)]">
+                        Core Advantages</h2>
+
+                    <div class="space-y-4">
+                        <!-- Item 1 -->
+                        <div class="flex gap-4 animate-on-scroll opacity-0 translate-y-4 transition-all duration-500">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-white dark:bg-slate-800 shadow-md flex items-center justify-center text-indigo-600 flex-shrink-0">
+                                <i data-lucide="search-check" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-800 dark:text-white mb-1">Smart Discovery</h3>
+                                <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">AI <span
+                                        class="bg-indigo-100 dark:bg-indigo-900/50 px-1 rounded text-indigo-700 dark:text-indigo-300">highlights</span>
+                                    relevant features.</p>
+                            </div>
+                        </div>
+
+                        <!-- Item 2 -->
+                        <div
+                            class="flex gap-4 animate-on-scroll opacity-0 translate-y-4 transition-all duration-500 delay-100">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-white dark:bg-slate-800 shadow-md flex items-center justify-center text-teal-600 flex-shrink-0">
+                                <i data-lucide="shield-check" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-800 dark:text-white mb-1">Verified Trust</h3>
+                                <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed"><span
+                                        class="bg-teal-100 dark:bg-teal-900/50 px-1 rounded text-teal-700 dark:text-teal-300">Triple-Check</span>
+                                    verification for sellers.</p>
+                            </div>
+                        </div>
+
+                        <!-- Item 3 -->
+                        <div
+                            class="flex gap-4 animate-on-scroll opacity-0 translate-y-4 transition-all duration-500 delay-200">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-white dark:bg-slate-800 shadow-md flex items-center justify-center text-purple-600 flex-shrink-0">
+                                <i data-lucide="zap" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-800 dark:text-white mb-1">Instant Connect</h3>
+                                <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Secure, real-time
+                                    chat for faster deals.</p>
+                            </div>
+                        </div>
+
+                        <!-- Item 4 -->
+                        <div
+                            class="flex gap-4 animate-on-scroll opacity-0 translate-y-4 transition-all duration-500 delay-300">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-white dark:bg-slate-800 shadow-md flex items-center justify-center text-rose-500 flex-shrink-0">
+                                <i data-lucide="heart" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-800 dark:text-white mb-1">Community Driven</h3>
+                                <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Join a movement
+                                    reducing waste together.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -512,7 +538,7 @@
             <p class="text-xl text-slate-100 max-w-2xl mx-auto mb-10 font-light">Timeless lines, organic curves, and
                 material honesty. Discover our most sought-after furniture collection.</p>
             <button
-                class="px-10 py-4 bg-white text-slate-900 rounded-full font-bold hover:bg-indigo-50 transition-all transform hover:scale-105 shadow-2xl">Explore
+                class="px-10 py-4 bg-white/50 dark:bg-slate-800/50 backdrop-blur-md text-slate-700 dark:text-slate-200 font-bold rounded-full border border-slate-200 dark:border-slate-700 hover:bg-white dark:hover:bg-slate-800 transition-all hover:shadow-lg">Explore
                 Collection</button>
         </div>
     </section>
@@ -598,7 +624,7 @@
         </div>
     </section>
 
-    <!-- Trending & New Listings (Carousel Style) -->
+    <!-- Trending & New Listings (Carousel Style) - Forced Dark Mode -->
     <section class="py-24 bg-slate-900 text-white overflow-hidden relative">
         <div
             class="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20">
@@ -606,17 +632,18 @@
         <div class="max-w-7xl mx-auto px-6 relative z-10">
             <div class="flex justify-between items-end mb-16">
                 <div>
-                    <span
-                        class="text-teal-400 font-bold tracking-widest uppercase text-xs mb-2 block animate-pulse">Live
+                    <span class="text-white font-bold tracking-widest uppercase text-xs mb-2 block animate-pulse">Live
                         Feed</span>
-                    <h2 class="text-4xl md:text-5xl font-serif italic text-white">Trending Now</h2>
+                    <h2 class="text-4xl md:text-5xl font-serif italic text-white"
+                        style="color: white !important; text-shadow: 0 0 15px rgba(0,0,0,0.9);">
+                        Trending Now</h2>
                 </div>
                 <div class="flex gap-2">
                     <button
-                        class="p-3 rounded-full border border-slate-700 hover:bg-white hover:text-slate-900 transition-colors"><i
+                        class="p-3 rounded-full border border-slate-700 bg-slate-800 text-white hover:bg-white hover:text-slate-900 transition-colors"><i
                             data-lucide="arrow-left" class="w-5 h-5"></i></button>
                     <button
-                        class="p-3 rounded-full border border-slate-700 hover:bg-white hover:text-slate-900 transition-colors"><i
+                        class="p-3 rounded-full border border-slate-700 bg-slate-800 text-white hover:bg-white hover:text-slate-900 transition-colors"><i
                             data-lucide="arrow-right" class="w-5 h-5"></i></button>
                 </div>
             </div>
@@ -632,8 +659,8 @@
                                 class="bg-red-500 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-lg">Hot</span>
                         </div>
                         <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/80 to-transparent">
-                            <h4 class="text-xl font-bold mb-1">Vintage Leica M3</h4>
-                            <p class="text-slate-300 text-sm">$2,400</p>
+                            <h4 class="text-xl font-bold mb-1 text-white">Vintage Leica M3</h4>
+                            <p class="text-slate-200 text-sm">$2,400</p>
                         </div>
                     </div>
                 </div>
@@ -647,8 +674,8 @@
                                 class="bg-blue-500 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-lg">New</span>
                         </div>
                         <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/80 to-transparent">
-                            <h4 class="text-xl font-bold mb-1">Eames Lounge Chair</h4>
-                            <p class="text-slate-300 text-sm">$4,800</p>
+                            <h4 class="text-xl font-bold mb-1 text-white">Eames Lounge Chair</h4>
+                            <p class="text-slate-200 text-sm">$4,800</p>
                         </div>
                     </div>
                 </div>
@@ -658,8 +685,8 @@
                         <img src="Assets/13.jpeg"
                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/80 to-transparent">
-                            <h4 class="text-xl font-bold mb-1">Macbook Pro M3</h4>
-                            <p class="text-slate-300 text-sm">$1,900</p>
+                            <h4 class="text-xl font-bold mb-1 text-white">Macbook Pro M3</h4>
+                            <p class="text-slate-200 text-sm">$1,900</p>
                         </div>
                     </div>
                 </div>
@@ -669,8 +696,8 @@
                         <img src="Assets/14.jpeg"
                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/80 to-transparent">
-                            <h4 class="text-xl font-bold mb-1">Gibson Les Paul</h4>
-                            <p class="text-slate-300 text-sm">$3,200</p>
+                            <h4 class="text-xl font-bold mb-1 text-white">Gibson Les Paul</h4>
+                            <p class="text-slate-200 text-sm">$3,200</p>
                         </div>
                     </div>
                 </div>
@@ -685,10 +712,26 @@
             </div>
             <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div>
-                    <h2 class="text-4xl md:text-5xl font-serif italic text-white mb-6">Safe. Secure. Confident.</h2>
-                    <p class="text-indigo-100 text-lg mb-10 leading-relaxed max-w-md mx-auto md:mx-0">Join a thoroughly
-                        moderated community where every user is verified and every listing is checked. Dispute
-                        resolution is always just a click away.</p>
+                    <h2 class="text-4xl md:text-5xl font-serif italic text-white mb-8">Safe. Secure. Confident.</h2>
+
+                    <ul class="space-y-4 mb-10 max-w-md mx-auto md:mx-0 text-left">
+                        <li class="flex items-center gap-3 text-indigo-100 text-lg">
+                            <div class="w-2 h-2 rounded-full bg-teal-400 shadow-[0_0_10px_rgba(45,212,191,0.5)]"></div>
+                            Every listing manually verified
+                        </li>
+                        <li class="flex items-center gap-3 text-indigo-100 text-lg">
+                            <div class="w-2 h-2 rounded-full bg-teal-400 shadow-[0_0_10px_rgba(45,212,191,0.5)]"></div>
+                            Secure payment protection
+                        </li>
+                        <li class="flex items-center gap-3 text-indigo-100 text-lg">
+                            <div class="w-2 h-2 rounded-full bg-teal-400 shadow-[0_0_10px_rgba(45,212,191,0.5)]"></div>
+                            24/7 Dispute resolution support
+                        </li>
+                        <li class="flex items-center gap-3 text-indigo-100 text-lg">
+                            <div class="w-2 h-2 rounded-full bg-teal-400 shadow-[0_0_10px_rgba(45,212,191,0.5)]"></div>
+                            Identity-checked community
+                        </li>
+                    </ul>
                     <div class="flex flex-col sm:flex-row gap-6 justify-center md:justify-start">
                         <div class="flex items-center gap-3">
                             <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white">
@@ -726,13 +769,10 @@
                 of curators, collectors, and creators. The marketplace for the mindful.</p>
 
             <button
-                class="relative z-10 group px-12 py-6 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-full font-bold text-xl overflow-hidden shadow-2xl transition-transform hover:scale-105 active:scale-95">
+                class="group px-12 py-6 bg-white/50 dark:bg-slate-800/50 backdrop-blur-md text-slate-700 dark:text-slate-200 rounded-full font-bold text-xl border border-slate-200 dark:border-slate-700 hover:bg-white dark:hover:bg-slate-800 transition-all hover:shadow-lg">
                 <span class="relative z-10 flex items-center gap-2 justify-center">Create Account <i
                         data-lucide="arrow-right"
                         class="w-6 h-6 group-hover:translate-x-1 transition-transform"></i></span>
-                <div
-                    class="absolute inset-0 bg-indigo-600 dark:bg-slate-200 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
-                </div>
             </button>
         </div>
     </section>
@@ -957,7 +997,7 @@
                 </div>
                 <div class="p-4">
                     <div class="text-4xl md:text-5xl font-black text-slate-800 dark:text-white mb-2 counter"
-                        data-target="4" data-suffix="M">0</div>
+                        data-target="4" data-suffix="M+">0</div>
                     <div class="text-sm font-bold text-slate-500 uppercase tracking-widest">Community Value</div>
                 </div>
             </div>

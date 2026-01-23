@@ -215,22 +215,31 @@ document.addEventListener('DOMContentLoaded', () => {
         counters.forEach(counter => {
             const hasSuffix = counter.getAttribute('data-suffix');
             const suffix = hasSuffix ? hasSuffix : '';
+            const target = +counter.getAttribute('data-target');
 
-            const updateCount = () => {
-                const target = +counter.getAttribute('data-target');
-                // parse innerText to number, removing potential suffix or commas
-                const count = +counter.innerText.replace(suffix, '').replace(/,/g, '');
+            // Duration-based animation (2 seconds)
+            const duration = 2000;
+            const frameDuration = 10;
+            const totalFrames = duration / frameDuration;
+            const increment = target / totalFrames;
 
-                const inc = target / speed;
+            let currentCount = 0;
 
-                if (count < target) {
-                    counter.innerText = Math.ceil(count + inc);
-                    setTimeout(updateCount, 10);
-                } else {
+            const timer = setInterval(() => {
+                currentCount += increment;
+
+                if (currentCount >= target) {
                     counter.innerText = target.toLocaleString() + suffix;
+                    clearInterval(timer);
+                } else {
+                    // For small numbers (like 4), we might want to show decimals or just 
+                    // floor it. If we floor it, it will stay at 0, 1, 2... 
+                    // To make it look active, we update the text only when the integer changes?
+                    // Or we just rely on the speed.
+                    // For 4: 2000ms / 4 = 500ms per digit. That's a good speed.
+                    counter.innerText = Math.floor(currentCount).toLocaleString();
                 }
-            };
-            updateCount();
+            }, frameDuration);
         });
     }
 
@@ -466,3 +475,40 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+
+/* Active Navbar Link Logic */
+document.addEventListener('DOMContentLoaded', () => {
+    // Get current filename, default to index.html if empty or root
+    let currentPath = window.location.pathname.split('/').pop();
+    if (currentPath === '' || currentPath === '/') currentPath = 'index.html';
+
+    const navLinks = document.querySelectorAll('nav a');
+    const navButtons = document.querySelectorAll('nav button.dropdown-trigger');
+
+    // Remove any existing active classes just in case
+    document.querySelectorAll('.active-nav-link').forEach(el => el.classList.remove('active-nav-link'));
+
+    // Helper to set active
+    const setActive = (el) => {
+        el.classList.add('active-nav-link');
+    };
+
+    // Check Dropdown Triggers first (Parents)
+    if (currentPath === 'index.html' || currentPath === 'index2.html') {
+        navButtons.forEach(btn => {
+            if (btn.innerText.includes('Home')) setActive(btn);
+        });
+    } else if (currentPath === 'user_dashboard.html' || currentPath === 'admin_dashboard.html') {
+        navButtons.forEach(btn => {
+            if (btn.innerText.includes('Dashboards')) setActive(btn);
+        });
+    } else {
+        // Direct Links (About, Services, Contact)
+        navLinks.forEach(link => {
+            const linkPath = link.getAttribute('href');
+            if (linkPath === currentPath) {
+                setActive(link);
+            }
+        });
+    }
+});
