@@ -93,7 +93,7 @@ body::before {
 }
 
 .bg-about::before {
-  background-image: url('Assets/about.jpeg');
+  background-image: url('Assets/about bg.jpeg');
 }
 
 .bg-services::before {
