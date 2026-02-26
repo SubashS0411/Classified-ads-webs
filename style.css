@@ -85,43 +85,43 @@ body::before {
 
 /* Page-Specific Backgrounds */
 .bg-home-v1::before {
-  background-image: url('Assets/index.jpg');
+  background-image: url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200&auto=format&fit=crop');
 }
 
 .bg-home-v2::before {
-  background-image: url('Assets/index2.jpeg');
+  background-image: url('https://images.unsplash.com/photo-1556761175-5973dc0f32d7?q=80&w=1200&auto=format&fit=crop');
 }
 
 .bg-about::before {
-  background-image: url('Assets/about bg.jpeg');
+  background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop');
 }
 
 .bg-services::before {
-  background-image: url('Assets/service.jpeg');
+  background-image: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=800&auto=format&fit=crop');
 }
 
 .bg-contact::before {
-  background-image: url('Assets/contact.jpeg');
+  background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=800&auto=format&fit=crop');
 }
 
 .bg-user-dash::before {
-  background-image: url('Assets/dashboard.jpeg');
+  background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop');
 }
 
 .bg-admin-dash::before {
-  background-image: url('Assets/dashboard.jpeg');
+  background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop');
 }
 
 .bg-login::before {
-  background-image: url('Assets/35.jpeg');
+  background-image: url('https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?q=80&w=600&auto=format&fit=crop');
 }
 
 .bg-404::before {
-  background-image: url('Assets/36.jpeg');
+  background-image: url('https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?q=80&w=600&auto=format&fit=crop');
 }
 
 .bg-pricing::before {
-  background-image: url('Assets/33.jpeg');
+  background-image: url('https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?q=80&w=600&auto=format&fit=crop');
 }
 
 @keyframes breathe {
