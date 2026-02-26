@@ -562,6 +562,8 @@ h3:hover {
 
 .animate-glow-pulse {
   animation: glowPulse 2s infinite ease-in-out;
+  text-decoration: none !important;
+  border-bottom: none !important;
 }
 
 .animate-fade-up-delayed {
