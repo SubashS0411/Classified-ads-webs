@@ -1,6 +1,6 @@
-# ClassifiedPro - Modern Classified Ads Platform
+# Classified-ads-website - Modern Classified Ads Platform
 
-ClassifiedPro is a premium, fully responsive, and feature-rich static website template designed for classified ads platforms, marketplaces, and directory listings. It features a modern UI with built-in Light/Dark modes, RTL support, and interactive dashboards for both users and administrators.
+Classified-ads-website is a premium, fully responsive, and feature-rich static website template designed for classified ads platforms, marketplaces, and directory listings. It features a modern UI with built-in Light/Dark modes, RTL support, and interactive dashboards for both users and administrators.
 
 ## 🚀 Features
 
@@ -28,7 +28,7 @@ ClassifiedPro is a premium, fully responsive, and feature-rich static website te
 ## 📂 Project Structure
 
 ```text
-classified-pro/
+classified-ads-website/
 ├── Assets/                 # Images and static assets
 ├── 404.html               # Custom Error Page
 ├── about.html             # About Us page
